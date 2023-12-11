@@ -9,6 +9,8 @@ website:
     left:
       - text: Project
         href: project.qmd
+      - text: Quarto Template
+        href: quarto-template.qmd
       - text: Blog
         href: blog-listing.qmd
   page-footer: 

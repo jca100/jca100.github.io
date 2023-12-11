@@ -1,45 +1,38 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Jordan Alfano Insightful Analytics",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nRestaurants\n\n\n\n\n\n\n\n\n\nDec 8, 2023\n\n\nJordan Alfano\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nNov 2, 2023\n\n\nByeong-Hak Choe\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jordan Alfano",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "I am a Sophomore candidate for a Bachelors in Data Analytics at SUNY Geneseo. I enjoy going to the gym on my free time. When I am not doing work or have to taken on a multitude of responsibilities, my time is spent with my family and friends."
   },
   {
-    "objectID": "posts/starwars/starwars_df.html",
-    "href": "posts/starwars/starwars_df.html",
-    "title": "Starwars",
-    "section": "",
-    "text": "Let’s analyze the starwars data:"
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Jordan Alfano",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026"
   },
   {
-    "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
-    "href": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
-    "title": "Starwars",
-    "section": "Variable Description for starwars data.frame",
-    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
-  },
-  {
-    "objectID": "posts/starwars/starwars_df.html#human-vs.-droid",
-    "href": "posts/starwars/starwars_df.html#human-vs.-droid",
-    "title": "Starwars",
-    "section": "Human vs. Droid",
-    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %>% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Jordan Alfano",
+    "section": "Experience",
+    "text": "Experience\nAccenture Data Analyst Virtual Internship"
   },
   {
     "objectID": "posts/beer-markets/beer-markets.html",
     "href": "posts/beer-markets/beer-markets.html",
     "title": "Beer Markets",
     "section": "",
-    "text": "Let’s analyze the beer_data data:"
+    "text": "Let’s analyze the beer_data data:\n\nbeer_data &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\n\nrmarkdown::paged_table(beer_data)"
   },
   {
     "objectID": "posts/beer-markets/beer-markets.html#variable-description-for-beer_data-data.frame",
@@ -77,32 +70,39 @@
     "text": "Promotional Impact\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "YOUR NAME",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
     "section": "",
-    "text": "Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana."
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "YOUR NAME",
-    "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026  Minor in Business Administration"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "YOUR NAME",
-    "section": "Experience",
-    "text": "Experience\nStarbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024"
-  },
-  {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Insightful Analytics",
+    "objectID": "posts/starwars/starwars_df.html",
+    "href": "posts/starwars/starwars_df.html",
+    "title": "Starwars",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nNov 2, 2023\n\n\nByeong-Hak Choe\n\n\n8 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n0 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
+    "href": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
+    "title": "Starwars",
+    "section": "Variable Description for starwars data.frame",
+    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html#human-vs.-droid",
+    "href": "posts/starwars/starwars_df.html#human-vs.-droid",
+    "title": "Starwars",
+    "section": "Human vs. Droid",
+    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "project.html",
@@ -116,7 +116,7 @@
     "href": "project.html#summary-statistics",
     "title": "DANL Project",
     "section": "2.1 Summary Statistics",
-    "text": "2.1 Summary Statistics\n\nmpg <- ggplot2::mpg\n\n\n\n\n  \n\n\n\nskim(mpg) %>% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nmpg\n\n\nNumber of rows\n234\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nmanufacturer\n1\n4\n10\n0\n15\n0\n\n\nmodel\n1\n2\n22\n0\n38\n0\n\n\ntrans\n1\n8\n10\n0\n10\n0\n\n\ndrv\n1\n1\n1\n0\n3\n0\n\n\nfl\n1\n1\n1\n0\n5\n0\n\n\nclass\n1\n3\n10\n0\n7\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ndispl\n1\n3.47\n1.29\n1.6\n2.4\n3.3\n4.6\n7\n▇▆▆▃▁\n\n\nyear\n1\n2003.50\n4.51\n1999.0\n1999.0\n2003.5\n2008.0\n2008\n▇▁▁▁▇\n\n\ncyl\n1\n5.89\n1.61\n4.0\n4.0\n6.0\n8.0\n8\n▇▁▇▁▇\n\n\ncty\n1\n16.86\n4.26\n9.0\n14.0\n17.0\n19.0\n35\n▆▇▃▁▁\n\n\nhwy\n1\n23.44\n5.95\n12.0\n18.0\n24.0\n27.0\n44\n▅▅▇▁▁"
+    "text": "2.1 Summary Statistics\n\nmpg &lt;- ggplot2::mpg\n\n\n\n\n  \n\n\n\nskim(mpg) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nmpg\n\n\nNumber of rows\n234\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nmanufacturer\n1\n4\n10\n0\n15\n0\n\n\nmodel\n1\n2\n22\n0\n38\n0\n\n\ntrans\n1\n8\n10\n0\n10\n0\n\n\ndrv\n1\n1\n1\n0\n3\n0\n\n\nfl\n1\n1\n1\n0\n5\n0\n\n\nclass\n1\n3\n10\n0\n7\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ndispl\n1\n3.47\n1.29\n1.6\n2.4\n3.3\n4.6\n7\n▇▆▆▃▁\n\n\nyear\n1\n2003.50\n4.51\n1999.0\n1999.0\n2003.5\n2008.0\n2008\n▇▁▁▁▇\n\n\ncyl\n1\n5.89\n1.61\n4.0\n4.0\n6.0\n8.0\n8\n▇▁▇▁▇\n\n\ncty\n1\n16.86\n4.26\n9.0\n14.0\n17.0\n19.0\n35\n▆▇▃▁▁\n\n\nhwy\n1\n23.44\n5.95\n12.0\n18.0\n24.0\n27.0\n44\n▅▅▇▁▁"
   },
   {
     "objectID": "project.html#mpg-and-a-type-of-cars",
@@ -124,5 +124,89 @@
     "title": "DANL Project",
     "section": "2.2 MPG and a Type of Cars",
     "text": "2.2 MPG and a Type of Cars\nThe following boxplot shows how the distribution of highway MPG (hwy) varies by a type of cars (class) 🚙 🚚 🚐.\n\nggplot(data = mpg) +\n  geom_boxplot(aes(x = class, y = hwy, fill = class),\n               show.legend = F) +\n  labs(x = \"Class\", y = \"Highway\\nMPG\")"
+  },
+  {
+    "objectID": "quarto-template.html",
+    "href": "quarto-template.html",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "",
+    "text": "ggplot(diamonds, aes(carat, price)) + \n  geom_hex()\n\n\n\nggsave(\"diamonds.png\") # to save ggplot as a png file.\nwrite_csv(diamonds, \"diamonds.csv\") # to save data.frame as a csv file\noj &lt;- read_csv('https://bcdanl.github.io/data/dominick_oj.csv')\nnvars &lt;- format(round(ncol(oj), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(oj), 0), \n                nsmall=0, \n                big.mark=\",\")\nThe number of variables is 4; the number of observations is 28,947.\nRoses are red\nviolets are blue."
+  },
+  {
+    "objectID": "quarto-template.html#data-summary",
+    "href": "quarto-template.html#data-summary",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.1 Data Summary",
+    "text": "2.1 Data Summary\n\nSummary statistics (Use skimr::skim())"
+  },
+  {
+    "objectID": "quarto-template.html#data-visualization",
+    "href": "quarto-template.html#data-visualization",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.2 Data Visualization",
+    "text": "2.2 Data Visualization\n\noj %&gt;% \n  ggplot(aes(x = log(sales), \n             y = log(price),\n             color = brand)) +\n  geom_point(alpha = .1) +\n  geom_smooth(method = lm, se = F) +\n  facet_wrap(.~ad) +\n  theme_bw() +\n  theme(legend.position = 'top')"
+  },
+  {
+    "objectID": "quarto-template.html#data-transformation",
+    "href": "quarto-template.html#data-transformation",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.3 Data Transformation",
+    "text": "2.3 Data Transformation\n\nob_sum1 &lt;- oj %&gt;% \n  group_by(brand, ad) %&gt;% \n  summarise(sales_tot = sum(sales, na.rm = T),\n            price_mean = round(mean(price, na.rm = T), 2))"
+  },
+  {
+    "objectID": "quarto-template.html#analysis",
+    "href": "quarto-template.html#analysis",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.4 Analysis",
+    "text": "2.4 Analysis"
+  },
+  {
+    "objectID": "quarto-template.html#quotes",
+    "href": "quarto-template.html#quotes",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.5 Quotes",
+    "text": "2.5 Quotes\n\nQuote with &gt;\n\n\n“The truth is rarely pure and never simple.”\n— Oscar Wilde"
+  },
+  {
+    "objectID": "quarto-template.html#inserting-figures",
+    "href": "quarto-template.html#inserting-figures",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.6 Inserting Figures",
+    "text": "2.6 Inserting Figures\nFor a demonstration of a DANL tiger, see Figure 1.\n\n\n\n\n\nFigure 1: DANL Tiger"
+  },
+  {
+    "objectID": "quarto-template.html#inserting-a-html-page",
+    "href": "quarto-template.html#inserting-a-html-page",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.7 Inserting a HTML page",
+    "text": "2.7 Inserting a HTML page"
+  },
+  {
+    "objectID": "posts/restaurant/restaurants.html",
+    "href": "posts/restaurant/restaurants.html",
+    "title": "Restaurants",
+    "section": "",
+    "text": "Let’s analyze the restaurant data:\n\nres &lt;- read_csv(\"https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nrmarkdown::paged_table(res)"
+  },
+  {
+    "objectID": "posts/beer-markets/beermarkets.html",
+    "href": "posts/beer-markets/beermarkets.html",
+    "title": "Beer Markets",
+    "section": "",
+    "text": "Let’s analyze the beer_data data:\n\nbeer_data &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")\n\nrmarkdown::paged_table(beer_data)"
+  },
+  {
+    "objectID": "untitled.html",
+    "href": "untitled.html",
+    "title": "Classwork_10",
+    "section": "",
+    "text": "billboard &lt;- read_csv(‘https://bcdanl.github.io/data/billboard.csv’)\nQ1a.) Describe how the distribution of rating varies across week 1, week 2, and week 3 using the faceted histogram.\nQ1b.) Which artist(s) have the most number of tracks in billboard data.frame?\nDo not double-count an artist’s tracks if they appear in multiple weeks.\nQuestion 2 - Average Personal Income in NY Counties The following data is for Question 2:\nny_pincp &lt;- read_csv(‘https://bcdanl.github.io/data/NY_pinc_wide.csv’)\nQ2a Make ny_pincp longer.\nQ2b Provide both (1) ggplot code and (2) a simple comment to describe how overall the yearly trend of NY counties’ average personal incomes are.\nQuestion 3 - COVID-19 Cases The following data is for Question 3:\ncovid &lt;- read_csv(‘https://bcdanl.github.io/data/covid19_cases.csv’)\nQ3a Keep only the following three variables, date, countriesAndTerritories, and cases.\nThen make a wide-form data.frame of covid whose variable names are from countriesAndTerritories and values are from cases.\nThen drop the variable date.\nQ3b Use the wide-form data.frame of covid to find the top 10 countries in terms of the correlation between their cases and the USA case. Use cor(data.frame), which returns a matrix. Then convert it to data.frame using as.data.frame(matrix) —"
+  },
+  {
+    "objectID": "spotify all.html",
+    "href": "spotify all.html",
+    "title": "spotifyall",
+    "section": "",
+    "text": "---\ntitle: “spotifyall”\nauthor: “Jordan Alfano”\ndate: “2023-12-08”\ncategories: [spotifyall, code, analysis]\nimage: “image.png”\nexecute:\nwarning: false\nmessage: false\ntoc: true\n---\n```{r}\n#| include: false\nlibrary(knitr)\nlibrary(rmarkdown)\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggthemes)\nlibrary(hrbrthemes)\ntheme_set(theme_ipsum()+\ntheme(strip.background =element_rect(fill=“lightgray”),\naxis.title.x = element_text(angle = 0,\nsize = rel(1.5),\nmargin = margin(10,0,0,0)),\naxis.title.y = element_text(angle = 0,\nsize = rel(1.5),\nmargin = margin(0,10,0,0))\n)\n)\n``\nLet’s analyze the `spotifyall` data:\n```{r}\nspotify&lt;- read_csv(https://bcdanl.github.io/data/spotify_all.csv)\n```\n```{r}\n#| results: asis\nrmarkdown::paged_table(spotify)\n```"
   }
 ]

@@ -1,41 +1,37 @@
 ---
-title: "YOUR NAME"
+title: "Jordan Alfano"
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
-  image: img/profile.png
+  image: img/Portrait.jpg 
   image-width: 15em
   image-shape: round # rectangle  round  rounded
   
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
-    - icon: instagram
-      text: Instagram
-      href: https://instagram.com
+      href: https://www.linkedin.com/in/jordan-alfano-a2110224a/
     - icon: github
       text: GitHub
-      href: https://github.com
+      href: https://github.com/jca100?tab=projects
     - icon: file-earmark-pdf
       text: Resumé
-      href: https://GITHUB_USERNAME.github.io/resume-example.pdf
+      href: https://jca100.github.io/Resume_1.pdf
     - icon: mailbox
       text: Email
-      href: mailto:YOUR_EMAIL@geneseo.edu
+      href: mailto:jca100@geneseo.edu
 
 ---
 
+I am a Sophomore candidate for a Bachelors in Data Analytics at SUNY Geneseo. I enjoy going to the gym on my free time. When I am not doing work or have to taken on a multitude of responsibilities, my time is spent with my family and friends. 
 
-Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
 
 ## Education
 
 State University of New York at Geneseo | Geneseo, NY <br>
 B.S. in Data Analytics | Aug 2022 - May 2026 <br>
-Minor in Business Administration 
+
 
 ## Experience
-
-Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024
+Accenture Data Analyst Virtual Internship 
 
 

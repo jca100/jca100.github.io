@@ -1,0 +1,53 @@
+---
+title: "Restaurants"
+author: "Jordan Alfano"
+date: "2023-12-08"
+categories: [restaurants, code, analysis]
+image: "image.png"
+
+execute: 
+  warning: false
+  message: false
+  
+toc: true
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(10,0,0,0)),
+                axis.title.y  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(0,10,0,0))
+                )
+          )
+```
+
+Let's analyze the `res` data:
+
+```{r}
+res <- read_csv("https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv")
+```
+
+
+```{r}
+#| results: asis
+rmarkdown::paged_table(res) 
+```
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 ---
-title: "Insightful Analytics<br><br>"
+title: "Jordan Alfano Insightful Analytics<br><br>"
 listing:
   contents: posts
   type: default
