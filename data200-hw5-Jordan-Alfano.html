@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Jordan - danl200-hw5-alfano-jordan</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Jordan</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./project.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto-template.html" rel="" target="">
+ <span class="menu-text">Quarto Template</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog-listing.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">danl200-hw5-alfano-jordan</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>[https://github.com/jca100/jca100.github.io(https://github.com/jca100/jca100.github.io)</p>
+<p>DANL 200: Homework Assignment 5 PUBLISHED December 4, 2023</p>
+<p>Submit the danl200-hw5-YOUR_LAST_NAME-YOUR_FIRST_NAME.qmd file to Brightspace for Q1a and Question 2 in Homework Assignment 5. Rendering the file, danl200-hw5-YOUR_LAST_NAME-YOUR_FIRST_NAME.qmd, should not give any errors. Due is December 11, 11:59 P.M.</p>
+<p>Question 1. Personal Website on GitHub Q1a. Provide a link for your GihtHub repository, https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io</p>
+<p>https://github.com/jca100/jca100.github.io</p>
+<p>Add a URL for your website (https://YOUR_GITHUB_USERNAME.github.io/) in the About section in your GihtHub repository webpage by clicking the setting. For example, the below shows the :</p>
+<p>Q1b. Make sure that your GitHub repository, named YOUR_GITHUB_USERNAME.github.io, is set to public.</p>
+<p>Update your website at https://YOUR_GITHUB_USERNAME.github.io/index.html to:</p>
+<p>Include links to (1) your LinkedIn page, (2) GitHub page (https://github.com/YOUR_GITHUB_USERNAME), and (3) a PDF file of your Rèsume (https://YOUR_GITHUB_USERNAME.github.io/YOUR_RESUME.pdf). Offer a description of yourself, detailing your education background and professional experience. Display your own profile picture with your face, not the one shown below.</p>
+<p>Q1c. Change the title of your blog.</p>
+<p>That is, to replace Insightful Analytics with your own blog name. Remove the blog posts Post With Code, Starwars, and Beer Markets.</p>
+<p>Revise the Welcome To My Blog post.</p>
+<p>Post three different blog articles based on data analysis using the following three CSV files:</p>
+<p>https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv https://bcdanl.github.io/data/spotify_all.csv https://bcdanl.github.io/data/beer_markets.csv</p>
+<p>Make sure that each blog post has categories and is associated with a proper image file that is displayed as a thumbnail at the list page of the blog. Make sure that each blog post uses emojis properly. (E.g., 😄 🍺 🎶 🍕)</p>
+<p>Make sure that each blog post includes its thumbnail image and at least three ggplot figures. You can refer to the previous DANL 200 Homework Assignments and Exams for your blog posts.</p>
+<p>Question 2.</p>
+<p>NFL in 2022 Add a blog post with your answers for Question 2 to your website (https://YOUR_GITHUB_USERNAME.github.io/).</p>
+<p>Make sure that your blog post for Question 2 includes all the questionnaires and your answers to them. Make sure that your blog post for Question 2 has a section for each sub-question (e.g., Q2a, Q2b) in Question 2, so that the Table of Contents display the section for each questionnaire.</p>
+<p>The following is the data.frame for Question 2. NFL2022_stuffs &lt;- read_csv(‘https://bcdanl.github.io/data/NFL2022_stuffs.csv’)</p>
+<p>play_id <dbl> game_id <chr> drive <dbl> week <dbl> posteam <chr> qtr <dbl> down <dbl> half_seconds_remaining <dbl> pass <dbl> wp <dbl> 1 2022_01_BAL_NYJ NA 1 NA 1 NA 1800 0 5.462618e-01 43 2022_01_BAL_NYJ 1 1 NYJ 1 NA 1800 0 5.462618e-01 68 2022_01_BAL_NYJ 1 1 NYJ 1 1 1796 0 5.469690e-01 89 2022_01_BAL_NYJ 1 1 NYJ 1 1 1769 1 5.725734e-01 115 2022_01_BAL_NYJ 1 1 NYJ 1 2 1765 0 5.545366e-01 136 2022_01_BAL_NYJ 1 1 NYJ 1 3 1741 1 5.401673e-01 172 2022_01_BAL_NYJ 1 1 NYJ 1 4 1733 0 4.880532e-01 202 2022_01_BAL_NYJ 2 1 BAL 1 1 1722 1 4.958201e-01 230 2022_01_BAL_NYJ 2 1 BAL 1 2 1701 1 4.965942e-01 254 2022_01_BAL_NYJ 2 1 BAL 1 3 1661 0 4.987317e-01 … 1-10 of 10,000 rows NFL2022_stuffs is the data.frame that contains information about NFL games in year 2022, in which the unit of observation is a single play for each drive in a NFL game. Variable description play_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play game_id: Ten digit identifier for NFL game. drive: Numeric drive number in the game. week: Season week. posteam: String abbreviation for the team with possession. qtr: Quarter of the game (5 is overtime). half_seconds_remaining: Numeric seconds remaining in the half. down: The down for the given play. Basically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it). If you make 10 yards then you get another set of four downs. pass: Binary indicator if the play was a pass play. wp: Estimated winning probability for the posteam given the current situation at the start of the given play.</dbl></dbl></dbl></dbl></dbl></chr></dbl></dbl></chr></dbl></p>
+<p>Q2a. In data.frame, NFL2022_stuffs, remove observations for which values of posteam is missing.</p>
+<p>Answer: # Assuming NFL2022_stuffs is your data frame</p>
+<p>NFL2022_stuffs &lt;- na.omit(NFL2022_stuffs[, !is.na(NFL2022_stuffs$posteam)])</p>
+<p>Q2b. Summarize the mean value of pass for each posteam when all the following conditions hold: wp is greater than 20% and less than 75%; down is less than or equal to 2; and half_seconds_remaining is greater than 120.</p>
+<p>Answer:</p>
+<p>library(dplyr)</p>
+<p>result &lt;- NFL2022_stuffs %&gt;%</p>
+<p>filter(wp &gt; 0.20 &amp; wp &lt; 0.75 &amp; down &lt;= 2 &amp; half_seconds_remaining &gt; 120) %&gt;%</p>
+<p>group_by(posteam) %&gt;%</p>
+<p>summarize(mean_pass = mean(pass, na.rm = TRUE))</p>
+<p>Q2c. Provide both (1) a ggplot code with geom_point() using the resulting data.frame in Q2b and (2) a simple comments to describe the mean value of pass for each posteam. In the ggplot, reorder the posteam categories based on the mean value of pass in ascending or in descending order.</p>
+<p>Answer:</p>
+<p>library(ggplot2)</p>
+<p>result$posteam &lt;- factor(result$posteam, levels = result$posteam[order(result$mean_pass)])</p>
+<p>ggplot(result, aes(x = posteam, y = mean_pass)) +</p>
+<p>geom_point() +</p>
+<p>labs(title = “Mean Value of pass for each posteam”,</p>
+<p>x = “Posteam”,</p>
+<p>y = “Mean Pass Value”)</p>
+<p>Q2d. Consider the following data.frame, NFL2022_epa: NFL2022_epa &lt;- read_csv(‘https://bcdanl.github.io/data/NFL2022_epa.csv’)</p>
+<p>Create the data.frame, NFL2022_stuffs_EPA, that includes</p>
+<p>All the variables in the data.frame, NFL2022_stuffs; The variables, passer, receiver, and epa, from the data.frame, NFL2022_epa. by joining the two data.frames. In the resulting data.frame, NFL2022_stuffs_EPA, remove observations with NA in passer.</p>
+<p>Answer:</p>
+<p>library(dplyr)</p>
+<p>NFL2022_stuffs_EPA &lt;- inner_join(NFL2022_stuffs, NFL2022_epa[, c(“passer”, “receiver”, “epa”)], by = “passer”)</p>
+<p>NFL2022_stuffs_EPA &lt;- NFL2022_stuffs_EPA[complete.cases(NFL2022_stuffs_EPA$passer), ]</p>
+<p>Q2e. Provide both (1) a single ggplot and (2) a simple comment to describe the NFL weekly trend of weekly mean value of epa for each of the following two passers, “J.Allen” “P.Mahomes”</p>
+<p>Answer: library(ggplot2)</p>
+<p>ggplot(NFL2022_stuffs_EPA, aes(x = week, y = epa, color = passer)) +</p>
+<p>geom_line() +</p>
+<p>geom_point() +</p>
+<p>labs(title = “NFL Weekly Trend of Mean EPA for J.Allen and P.Mahomes”,</p>
+<p>x = “Week”,</p>
+<p>y = “Mean EPA”) +</p>
+<p>color(values = c(“J.Allen” = “blue”, “P.Mahomes” = “red”))</p>
+<p>Q2f. Calculate the difference between the mean value of epa for “J.Allen” the mean value of epa for “P.Mahomes” for each value of week.</p>
+<p>Answer:</p>
+<p>library(dplyr)</p>
+<p>group_by(week) %&gt;%</p>
+<p>summarize(mean_epa_diff = mean(epa[passer == “J.Allen”], na.rm = TRUE) -</p>
+<p>mean(epa[passer == “P.Mahomes”], na.rm = TRUE))</p>
+<p>Q2g. Summarize the resulting data.frame in Q2d, with the following four variables:</p>
+<p>posteam: String abbreviation for the team with possession. passer: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.) mean_epa: Mean value of epa in 2022 for each passer n_pass: Number of observations for each passer Then find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.</p>
+<p>Answer:</p>
+<p>library(dplyr)</p>
+<p>summary_data &lt;- NFL2022_stuffs_EPA %&gt;%</p>
+<p>group_by(posteam, passer) %&gt;%</p>
+<p>summarize(mean_epa = mean(epa, na.rm = TRUE),</p>
+<p>n_pass = n())</p>
+<p>quantile_threshold &lt;- quantile(summary_data$n_pass, 0.75)</p>
+<p>top_passers &lt;- summary_data %&gt;%</p>
+<p>filter(n_pass &gt;= quantile_threshold) %&gt;%</p>
+<p>top_n(10, wt = mean_epa)</p>
+<p>top_passers</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="text/javascript" src="links.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Powered with GitHub and Quarto<br>© YOUR NAME, 2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -109,7 +109,7 @@
     "href": "project.html",
     "title": "DANL Project",
     "section": "",
-    "text": "About this project 👏\n\n1 + 1\n\n[1] 2"
+    "text": "day_wise &lt;- read_csv('https://jem10126.github.io/day_wise.csv')\nnvars &lt;- format(round(ncol(day_wise), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(day_wise), 0), \n                nsmall=0, \n                big.mark=\",\")\nrmarkdown::paged_table(day_wise)\nday_wise %&gt;% \n  ggplot(aes(x = log(Deaths), \n             y = log(Recovered))) + \n  geom_point(alpha = .1, color = 'purple') +\n  geom_smooth(method = lm, se = F) +\n  theme_bw() +\n  theme(legend.position = 'top')\nday_wise &lt;- day_wise %&gt;% \n  group_by(Deaths, Recovered) %&gt;% \n  summarise(Recovered_tot = sum(Recovered, na.rm = T),\n            Deaths_mean = round(mean(Deaths, na.rm = T), 2),\n            .groups = \"drop\")\nrmarkdown::paged_table(day_wise)"
   },
   {
     "objectID": "project.html#summary-statistics",
@@ -186,7 +186,7 @@
     "href": "posts/restaurant/restaurants.html",
     "title": "Restaurants",
     "section": "",
-    "text": "Let’s analyze the restaurant data:\n\nres &lt;- read_csv(\"https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nrmarkdown::paged_table(res)"
+    "text": "Let’s analyze the res data:\n\nres &lt;- read_csv(\"https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nrmarkdown::paged_table(res)"
   },
   {
     "objectID": "posts/beer-markets/beermarkets.html",
@@ -208,5 +208,96 @@
     "title": "spotifyall",
     "section": "",
     "text": "---\ntitle: “spotifyall”\nauthor: “Jordan Alfano”\ndate: “2023-12-08”\ncategories: [spotifyall, code, analysis]\nimage: “image.png”\nexecute:\nwarning: false\nmessage: false\ntoc: true\n---\n```{r}\n#| include: false\nlibrary(knitr)\nlibrary(rmarkdown)\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggthemes)\nlibrary(hrbrthemes)\ntheme_set(theme_ipsum()+\ntheme(strip.background =element_rect(fill=“lightgray”),\naxis.title.x = element_text(angle = 0,\nsize = rel(1.5),\nmargin = margin(10,0,0,0)),\naxis.title.y = element_text(angle = 0,\nsize = rel(1.5),\nmargin = margin(0,10,0,0))\n)\n)\n``\nLet’s analyze the `spotifyall` data:\n```{r}\nspotify&lt;- read_csv(https://bcdanl.github.io/data/spotify_all.csv)\n```\n```{r}\n#| results: asis\nrmarkdown::paged_table(spotify)\n```"
+  },
+  {
+    "objectID": "spotifyall.html",
+    "href": "spotifyall.html",
+    "title": "spotifyall",
+    "section": "",
+    "text": "---\ntitle: “spotifyall”\nauthor: “Jordan Alfano”\ndate: “2023-12-08”\ncategories: [spotifyall, code, analysis]\nimage: “image.png”\nexecute:\nwarning: false\nmessage: false\ntoc: true\n---\n```{r}\n#| include: false\nlibrary(knitr)\nlibrary(rmarkdown)\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggthemes)\nlibrary(hrbrthemes)\ntheme_set(theme_ipsum()+\ntheme(strip.background =element_rect(fill=“lightgray”),\naxis.title.x = element_text(angle = 0,\nsize = rel(1.5),\nmargin = margin(10,0,0,0)),\naxis.title.y = element_text(angle = 0,\nsize = rel(1.5),\nmargin = margin(0,10,0,0))\n)\n)\n``\nLet’s analyze the `spotifyall` data:\n```{r}\nspotifyall&lt;- read_csv(https://bcdanl.github.io/data/spotify_all.csv)\n```\n```{r}\n#| results: asis\nrmarkdown::paged_table(spotifyall)\n```"
+  },
+  {
+    "objectID": "data200-hw5-Jordan-Alfano.html",
+    "href": "data200-hw5-Jordan-Alfano.html",
+    "title": "danl200-hw5-alfano-jordan",
+    "section": "",
+    "text": "[https://github.com/jca100/jca100.github.io(https://github.com/jca100/jca100.github.io)\nDANL 200: Homework Assignment 5 PUBLISHED December 4, 2023\nSubmit the danl200-hw5-YOUR_LAST_NAME-YOUR_FIRST_NAME.qmd file to Brightspace for Q1a and Question 2 in Homework Assignment 5. Rendering the file, danl200-hw5-YOUR_LAST_NAME-YOUR_FIRST_NAME.qmd, should not give any errors. Due is December 11, 11:59 P.M.\nQuestion 1. Personal Website on GitHub Q1a. Provide a link for your GihtHub repository, https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io\nhttps://github.com/jca100/jca100.github.io\nAdd a URL for your website (https://YOUR_GITHUB_USERNAME.github.io/) in the About section in your GihtHub repository webpage by clicking the setting. For example, the below shows the :\nQ1b. Make sure that your GitHub repository, named YOUR_GITHUB_USERNAME.github.io, is set to public.\nUpdate your website at https://YOUR_GITHUB_USERNAME.github.io/index.html to:\nInclude links to (1) your LinkedIn page, (2) GitHub page (https://github.com/YOUR_GITHUB_USERNAME), and (3) a PDF file of your Rèsume (https://YOUR_GITHUB_USERNAME.github.io/YOUR_RESUME.pdf). Offer a description of yourself, detailing your education background and professional experience. Display your own profile picture with your face, not the one shown below.\nQ1c. Change the title of your blog.\nThat is, to replace Insightful Analytics with your own blog name. Remove the blog posts Post With Code, Starwars, and Beer Markets.\nRevise the Welcome To My Blog post.\nPost three different blog articles based on data analysis using the following three CSV files:\nhttps://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv https://bcdanl.github.io/data/spotify_all.csv https://bcdanl.github.io/data/beer_markets.csv\nMake sure that each blog post has categories and is associated with a proper image file that is displayed as a thumbnail at the list page of the blog. Make sure that each blog post uses emojis properly. (E.g., 😄 🍺 🎶 🍕)\nMake sure that each blog post includes its thumbnail image and at least three ggplot figures. You can refer to the previous DANL 200 Homework Assignments and Exams for your blog posts.\nQuestion 2.\nNFL in 2022 Add a blog post with your answers for Question 2 to your website (https://YOUR_GITHUB_USERNAME.github.io/).\nMake sure that your blog post for Question 2 includes all the questionnaires and your answers to them. Make sure that your blog post for Question 2 has a section for each sub-question (e.g., Q2a, Q2b) in Question 2, so that the Table of Contents display the section for each questionnaire.\nThe following is the data.frame for Question 2. NFL2022_stuffs &lt;- read_csv(‘https://bcdanl.github.io/data/NFL2022_stuffs.csv’)\nplay_id  game_id  drive  week  posteam  qtr  down  half_seconds_remaining  pass  wp  1 2022_01_BAL_NYJ NA 1 NA 1 NA 1800 0 5.462618e-01 43 2022_01_BAL_NYJ 1 1 NYJ 1 NA 1800 0 5.462618e-01 68 2022_01_BAL_NYJ 1 1 NYJ 1 1 1796 0 5.469690e-01 89 2022_01_BAL_NYJ 1 1 NYJ 1 1 1769 1 5.725734e-01 115 2022_01_BAL_NYJ 1 1 NYJ 1 2 1765 0 5.545366e-01 136 2022_01_BAL_NYJ 1 1 NYJ 1 3 1741 1 5.401673e-01 172 2022_01_BAL_NYJ 1 1 NYJ 1 4 1733 0 4.880532e-01 202 2022_01_BAL_NYJ 2 1 BAL 1 1 1722 1 4.958201e-01 230 2022_01_BAL_NYJ 2 1 BAL 1 2 1701 1 4.965942e-01 254 2022_01_BAL_NYJ 2 1 BAL 1 3 1661 0 4.987317e-01 … 1-10 of 10,000 rows NFL2022_stuffs is the data.frame that contains information about NFL games in year 2022, in which the unit of observation is a single play for each drive in a NFL game. Variable description play_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play game_id: Ten digit identifier for NFL game. drive: Numeric drive number in the game. week: Season week. posteam: String abbreviation for the team with possession. qtr: Quarter of the game (5 is overtime). half_seconds_remaining: Numeric seconds remaining in the half. down: The down for the given play. Basically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it). If you make 10 yards then you get another set of four downs. pass: Binary indicator if the play was a pass play. wp: Estimated winning probability for the posteam given the current situation at the start of the given play.\nQ2a. In data.frame, NFL2022_stuffs, remove observations for which values of posteam is missing.\nAnswer: # Assuming NFL2022_stuffs is your data frame\nNFL2022_stuffs &lt;- na.omit(NFL2022_stuffs[, !is.na(NFL2022_stuffs$posteam)])\nQ2b. Summarize the mean value of pass for each posteam when all the following conditions hold: wp is greater than 20% and less than 75%; down is less than or equal to 2; and half_seconds_remaining is greater than 120.\nAnswer:\nlibrary(dplyr)\nresult &lt;- NFL2022_stuffs %&gt;%\nfilter(wp &gt; 0.20 & wp &lt; 0.75 & down &lt;= 2 & half_seconds_remaining &gt; 120) %&gt;%\ngroup_by(posteam) %&gt;%\nsummarize(mean_pass = mean(pass, na.rm = TRUE))\nQ2c. Provide both (1) a ggplot code with geom_point() using the resulting data.frame in Q2b and (2) a simple comments to describe the mean value of pass for each posteam. In the ggplot, reorder the posteam categories based on the mean value of pass in ascending or in descending order.\nAnswer:\nlibrary(ggplot2)\nresult$posteam &lt;- factor(result$posteam, levels = result$posteam[order(result$mean_pass)])\nggplot(result, aes(x = posteam, y = mean_pass)) +\ngeom_point() +\nlabs(title = “Mean Value of pass for each posteam”,\nx = “Posteam”,\ny = “Mean Pass Value”)\nQ2d. Consider the following data.frame, NFL2022_epa: NFL2022_epa &lt;- read_csv(‘https://bcdanl.github.io/data/NFL2022_epa.csv’)\nCreate the data.frame, NFL2022_stuffs_EPA, that includes\nAll the variables in the data.frame, NFL2022_stuffs; The variables, passer, receiver, and epa, from the data.frame, NFL2022_epa. by joining the two data.frames. In the resulting data.frame, NFL2022_stuffs_EPA, remove observations with NA in passer.\nAnswer:\nlibrary(dplyr)\nNFL2022_stuffs_EPA &lt;- inner_join(NFL2022_stuffs, NFL2022_epa[, c(“passer”, “receiver”, “epa”)], by = “passer”)\nNFL2022_stuffs_EPA &lt;- NFL2022_stuffs_EPA[complete.cases(NFL2022_stuffs_EPA$passer), ]\nQ2e. Provide both (1) a single ggplot and (2) a simple comment to describe the NFL weekly trend of weekly mean value of epa for each of the following two passers, “J.Allen” “P.Mahomes”\nAnswer: library(ggplot2)\nggplot(NFL2022_stuffs_EPA, aes(x = week, y = epa, color = passer)) +\ngeom_line() +\ngeom_point() +\nlabs(title = “NFL Weekly Trend of Mean EPA for J.Allen and P.Mahomes”,\nx = “Week”,\ny = “Mean EPA”) +\ncolor(values = c(“J.Allen” = “blue”, “P.Mahomes” = “red”))\nQ2f. Calculate the difference between the mean value of epa for “J.Allen” the mean value of epa for “P.Mahomes” for each value of week.\nAnswer:\nlibrary(dplyr)\ngroup_by(week) %&gt;%\nsummarize(mean_epa_diff = mean(epa[passer == “J.Allen”], na.rm = TRUE) -\nmean(epa[passer == “P.Mahomes”], na.rm = TRUE))\nQ2g. Summarize the resulting data.frame in Q2d, with the following four variables:\nposteam: String abbreviation for the team with possession. passer: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.) mean_epa: Mean value of epa in 2022 for each passer n_pass: Number of observations for each passer Then find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.\nAnswer:\nlibrary(dplyr)\nsummary_data &lt;- NFL2022_stuffs_EPA %&gt;%\ngroup_by(posteam, passer) %&gt;%\nsummarize(mean_epa = mean(epa, na.rm = TRUE),\nn_pass = n())\nquantile_threshold &lt;- quantile(summary_data$n_pass, 0.75)\ntop_passers &lt;- summary_data %&gt;%\nfilter(n_pass &gt;= quantile_threshold) %&gt;%\ntop_n(10, wt = mean_epa)\ntop_passers"
+  },
+  {
+    "objectID": "quarto-template (2).html",
+    "href": "quarto-template (2).html",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "",
+    "text": "day_wise &lt;- read_csv('https://jem10126.github.io/day_wise.csv')\nnvars &lt;- format(round(ncol(day_wise), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(day_wise), 0), \n                nsmall=0, \n                big.mark=\",\")\nThe number of variables is 12; the number of observations is 188."
+  },
+  {
+    "objectID": "quarto-template (2).html#data-summary",
+    "href": "quarto-template (2).html#data-summary",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.1 Data Summary",
+    "text": "2.1 Data Summary\n\nSummary statistics (Use skimr::skim())"
+  },
+  {
+    "objectID": "quarto-template (2).html#data-visualization",
+    "href": "quarto-template (2).html#data-visualization",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "1.1 Data Visualization",
+    "text": "1.1 Data Visualization\n\nday_wise %&gt;% \n  ggplot(aes(x = log(Deaths), \n             y = log(Recovered))) + \n  geom_point(alpha = .1, color = 'purple') +\n  geom_smooth(method = lm, se = F) +\n  theme_bw() +\n  theme(legend.position = 'top')\n\n\n\n\n\n(skimr::skim(day_wise))\n\n\nData summary\n\n\nName\nday_wise\n\n\nNumber of rows\n188\n\n\nNumber of columns\n12\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nDate\n1\n\n\nnumeric\n11\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: Date\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\nDate\n0\n1\n2020-01-22\n2020-07-27\n2020-04-24\n188\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nConfirmed\n0\n1\n4406960.01\n4757988.32\n555.00\n112191.00\n2848733.00\n7422045.50\n16480485.00\n▇▃▂▂▁\n\n\nDeaths\n0\n1\n230770.76\n217929.09\n17.00\n3935.00\n204190.00\n418634.50\n654036.00\n▇▂▃▃▂\n\n\nRecovered\n0\n1\n2066001.22\n2627976.39\n28.00\n60441.25\n784784.00\n3416395.75\n9468087.00\n▇▂▁▁▁\n\n\nActive\n0\n1\n2110188.03\n1969670.45\n510.00\n58641.75\n1859759.00\n3587015.25\n6358362.00\n▇▃▃▂▂\n\n\nNew cases\n0\n1\n87771.02\n75295.29\n0.00\n5568.50\n81114.00\n131502.50\n282756.00\n▇▇▃▂▂\n\n\nNew deaths\n0\n1\n3478.82\n2537.74\n0.00\n250.75\n4116.00\n5346.00\n9966.00\n▇▃▇▃▁\n\n\nNew recovered\n0\n1\n50362.02\n56090.89\n0.00\n2488.25\n30991.50\n79706.25\n284394.00\n▇▂▂▁▁\n\n\nDeaths / 100 Cases\n0\n1\n4.86\n1.58\n2.04\n3.51\n4.85\n6.30\n7.18\n▅▅▆▅▇\n\n\nRecovered / 100 Cases\n0\n1\n34.34\n16.21\n1.71\n22.78\n35.68\n48.95\n57.45\n▃▃▆▅▇\n\n\nDeaths / 100 Recovered\n0\n1\n22.10\n22.57\n6.26\n9.65\n15.38\n25.34\n134.43\n▇▁▁▁▁\n\n\nNo. of countries\n0\n1\n144.35\n65.18\n6.00\n101.25\n184.00\n187.00\n187.00\n▂▁▁▁▇"
+  },
+  {
+    "objectID": "quarto-template (2).html#data-transformation",
+    "href": "quarto-template (2).html#data-transformation",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "1.2 Data Transformation",
+    "text": "1.2 Data Transformation\n\nday_wise &lt;- day_wise %&gt;% \n  group_by(Deaths, Recovered) %&gt;% \n  summarise(Recovered_tot = sum(Recovered, na.rm = T),\n            Deaths_mean = round(mean(Deaths, na.rm = T), 2),\n            .groups = \"drop\")"
+  },
+  {
+    "objectID": "quarto-template (2).html#analysis",
+    "href": "quarto-template (2).html#analysis",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.4 Analysis",
+    "text": "2.4 Analysis"
+  },
+  {
+    "objectID": "quarto-template (2).html#quotes",
+    "href": "quarto-template (2).html#quotes",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.5 Quotes",
+    "text": "2.5 Quotes\n\nQuote with &gt;\n\n\n“The truth is rarely pure and never simple.”\n— Oscar Wilde"
+  },
+  {
+    "objectID": "quarto-template (2).html#inserting-figures",
+    "href": "quarto-template (2).html#inserting-figures",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.6 Inserting Figures",
+    "text": "2.6 Inserting Figures\nFor a demonstration of a DANL tiger, see Figure 1.\n\n\n\n\n\nFigure 1: DANL Tiger"
+  },
+  {
+    "objectID": "quarto-template (2).html#inserting-a-html-page",
+    "href": "quarto-template (2).html#inserting-a-html-page",
+    "title": "DANL 200: Introduction to Data AnalyticsProject",
+    "section": "2.7 Inserting a HTML page",
+    "text": "2.7 Inserting a HTML page"
+  },
+  {
+    "objectID": "project.html#analysis",
+    "href": "project.html#analysis",
+    "title": "DANL Project",
+    "section": "0.1 Analysis",
+    "text": "0.1 Analysis"
+  },
+  {
+    "objectID": "project.html#quotes",
+    "href": "project.html#quotes",
+    "title": "DANL Project",
+    "section": "0.2 Quotes",
+    "text": "0.2 Quotes\n\nQuote with &gt;\n\n\n“The truth is rarely pure and never simple.”\n— Oscar Wilde"
+  },
+  {
+    "objectID": "project.html#inserting-figures",
+    "href": "project.html#inserting-figures",
+    "title": "DANL Project",
+    "section": "0.3 Inserting Figures",
+    "text": "0.3 Inserting Figures\nFor a demonstration of a DANL tiger, see ?@fig-tiger."
   }
 ]

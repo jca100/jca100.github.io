@@ -3,7 +3,7 @@ title: "Restaurants"
 author: "Jordan Alfano"
 date: "2023-12-08"
 categories: [restaurants, code, analysis]
-image: "image.png"
+image: "pestaurant.png"
 
 execute: 
   warning: false

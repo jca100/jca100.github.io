@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Name 1">
-<meta name="author" content="Name 2">
-<meta name="author" content="Name 3">
-<meta name="author" content="Name 4">
-<meta name="author" content="Name 5">
+<meta name="author" content="Jocelyn Matusiak">
+<meta name="author" content="Jordan">
+<meta name="author" content="Julia">
+<meta name="author" content="Sophia">
 
 <title>Jordan - DANL Project</title>
 <style>
@@ -99,9 +98,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -152,12 +148,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a>
+  <li><a href="#example-title" id="toc-example-title" class="nav-link active" data-scroll-target="#example-title">Example Title</a>
   <ul class="collapse">
-  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
-  <li><a href="#mpg-and-a-type-of-cars" id="toc-mpg-and-a-type-of-cars" class="nav-link" data-scroll-target="#mpg-and-a-type-of-cars"><span class="header-section-number">2.2</span> MPG and a Type of Cars</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">0.1</span> Analysis</a></li>
+  <li><a href="#quotes" id="toc-quotes" class="nav-link" data-scroll-target="#quotes"><span class="header-section-number">0.2</span> Quotes</a></li>
+  <li><a href="#inserting-figures" id="toc-inserting-figures" class="nav-link" data-scroll-target="#inserting-figures"><span class="header-section-number">0.3</span> Inserting Figures</a></li>
   </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -177,11 +174,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
-             <p>Name 1 </p>
-             <p>Name 2 </p>
-             <p>Name 3 </p>
-             <p>Name 4 </p>
-             <p>Name 5 </p>
+             <p>Jocelyn Matusiak </p>
+             <p>Jordan </p>
+             <p>Julia </p>
+             <p>Sophia </p>
           </div>
   </div>
     
@@ -192,256 +188,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>About this project <span class="emoji" data-emoji="clap">👏</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://jem10126.github.io/day_wise.csv'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nvars <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">round</span>(<span class="fu">ncol</span>(day_wise), <span class="dv">0</span>), </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">nsmall=</span><span class="dv">0</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">big.mark=</span><span class="st">","</span>) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>nobs <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">round</span>(<span class="fu">nrow</span>(day_wise), <span class="dv">0</span>), </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">nsmall=</span><span class="dv">0</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">big.mark=</span><span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>rmarkdown::paged_table(day_wise)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(Deaths), </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="fu">log</span>(Recovered))) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">1</span>, <span class="at">color =</span> <span class="st">'purple'</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> F) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="ot">&lt;-</span> day_wise <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Deaths, Recovered) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Recovered_tot =</span> <span class="fu">sum</span>(Recovered, <span class="at">na.rm =</span> T),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Deaths_mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Deaths, <span class="at">na.rm =</span> T), <span class="dv">2</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>rmarkdown::paged_table(day_wise)</p>
+<section id="example-title" class="level1 unnumbered">
+<h1 class="unnumbered">Example Title</h1>
+<ul>
+<li>This is an unnumbered section.</li>
+</ul>
+<section id="analysis" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="analysis"><span class="header-section-number">0.1</span> Analysis</h2>
 </section>
-<section id="data" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Data</h1>
-<p>The data.frame <code>mpg</code> contains a subset of the fuel economy data that the EPA makes available on <a href="https://fueleconomy.gov/">https://fueleconomy.gov/</a>. It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. <span class="emoji" data-emoji="oncoming_automobile">🚘</span></p>
-<section id="summary-statistics" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["manufacturer"],"name":[1],"type":["chr"],"align":["left"]},{"label":["model"],"name":[2],"type":["chr"],"align":["left"]},{"label":["displ"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["year"],"name":[4],"type":["int"],"align":["right"]},{"label":["cyl"],"name":[5],"type":["int"],"align":["right"]},{"label":["trans"],"name":[6],"type":["chr"],"align":["left"]},{"label":["drv"],"name":[7],"type":["chr"],"align":["left"]},{"label":["cty"],"name":[8],"type":["int"],"align":["right"]},{"label":["hwy"],"name":[9],"type":["int"],"align":["right"]},{"label":["fl"],"name":[10],"type":["chr"],"align":["left"]},{"label":["class"],"name":[11],"type":["chr"],"align":["left"]}],"data":[{"1":"audi","2":"a4","3":"1.8","4":"1999","5":"4","6":"auto(l5)","7":"f","8":"18","9":"29","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"20","9":"31","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.0","4":"2008","5":"4","6":"auto(av)","7":"f","8":"21","9":"30","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"f","8":"16","9":"26","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"p","11":"compact"},{"1":"audi","2":"a4","3":"3.1","4":"2008","5":"6","6":"auto(av)","7":"f","8":"18","9":"27","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"18","9":"26","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"1.8","4":"1999","5":"4","6":"auto(l5)","7":"4","8":"16","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"4","8":"20","9":"28","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"4","8":"19","9":"27","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"15","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"17","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"3.1","4":"2008","5":"6","6":"auto(s6)","7":"4","8":"17","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a4 quattro","3":"3.1","4":"2008","5":"6","6":"manual(m6)","7":"4","8":"15","9":"25","10":"p","11":"compact"},{"1":"audi","2":"a6 quattro","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"15","9":"24","10":"p","11":"midsize"},{"1":"audi","2":"a6 quattro","3":"3.1","4":"2008","5":"6","6":"auto(s6)","7":"4","8":"17","9":"25","10":"p","11":"midsize"},{"1":"audi","2":"a6 quattro","3":"4.2","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"16","9":"23","10":"p","11":"midsize"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"14","9":"20","10":"r","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"11","9":"15","10":"e","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"14","9":"20","10":"r","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"5.7","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"13","9":"17","10":"r","11":"suv"},{"1":"chevrolet","2":"c1500 suburban 2wd","3":"6.0","4":"2008","5":"8","6":"auto(l4)","7":"r","8":"12","9":"17","10":"r","11":"suv"},{"1":"chevrolet","2":"corvette","3":"5.7","4":"1999","5":"8","6":"manual(m6)","7":"r","8":"16","9":"26","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"5.7","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"15","9":"23","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"6.2","4":"2008","5":"8","6":"manual(m6)","7":"r","8":"16","9":"26","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"6.2","4":"2008","5":"8","6":"auto(s6)","7":"r","8":"15","9":"25","10":"p","11":"2seater"},{"1":"chevrolet","2":"corvette","3":"7.0","4":"2008","5":"8","6":"manual(m6)","7":"r","8":"15","9":"24","10":"p","11":"2seater"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"14","9":"19","10":"r","11":"suv"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"5.3","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"11","9":"14","10":"e","11":"suv"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"5.7","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"suv"},{"1":"chevrolet","2":"k1500 tahoe 4wd","3":"6.5","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"14","9":"17","10":"d","11":"suv"},{"1":"chevrolet","2":"malibu","3":"2.4","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"27","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"2.4","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"22","9":"30","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"3.1","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"3.5","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"18","9":"29","10":"r","11":"midsize"},{"1":"chevrolet","2":"malibu","3":"3.6","4":"2008","5":"6","6":"auto(s6)","7":"f","8":"17","9":"26","10":"r","11":"midsize"},{"1":"dodge","2":"caravan 2wd","3":"2.4","4":"1999","5":"4","6":"auto(l3)","7":"f","8":"18","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"22","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"22","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.3","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"11","9":"17","10":"e","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"15","9":"22","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"15","9":"21","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"3.8","4":"2008","5":"6","6":"auto(l6)","7":"f","8":"16","9":"23","10":"r","11":"minivan"},{"1":"dodge","2":"caravan 2wd","3":"4.0","4":"2008","5":"6","6":"auto(l6)","7":"f","8":"16","9":"23","10":"r","11":"minivan"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.7","4":"2008","5":"6","6":"manual(m6)","7":"4","8":"15","9":"19","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.7","4":"2008","5":"6","6":"auto(l4)","7":"4","8":"14","9":"18","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.9","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"3.9","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"14","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"19","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"19","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"5.2","4":"1999","5":"8","6":"manual(m5)","7":"4","8":"11","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"dakota pickup 4wd","3":"5.2","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"dodge","2":"durango 4wd","3":"3.9","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"5.2","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"16","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"5.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"18","10":"r","11":"suv"},{"1":"dodge","2":"durango 4wd","3":"5.9","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"suv"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"manual(m6)","7":"4","8":"12","9":"16","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"manual(m6)","7":"4","8":"12","9":"16","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"4.7","4":"2008","5":"8","6":"manual(m6)","7":"4","8":"9","9":"12","10":"e","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.2","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.2","4":"1999","5":"8","6":"manual(m5)","7":"4","8":"11","9":"16","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"dodge","2":"ram 1500 pickup 4wd","3":"5.9","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"ford","2":"expedition 2wd","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"17","10":"r","11":"suv"},{"1":"ford","2":"expedition 2wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"17","10":"r","11":"suv"},{"1":"ford","2":"expedition 2wd","3":"5.4","4":"2008","5":"8","6":"auto(l6)","7":"r","8":"12","9":"18","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"19","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"4.6","4":"2008","5":"8","6":"auto(l6)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"ford","2":"explorer 4wd","3":"5.0","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"ford","2":"f150 pickup 4wd","3":"4.2","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"14","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.2","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"14","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.6","4":"1999","5":"8","6":"manual(m5)","7":"4","8":"13","9":"16","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"13","9":"16","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"4.6","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"pickup"},{"1":"ford","2":"f150 pickup 4wd","3":"5.4","4":"2008","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"pickup"},{"1":"ford","2":"mustang","3":"3.8","4":"1999","5":"6","6":"manual(m5)","7":"r","8":"18","9":"26","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"r","8":"18","9":"25","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.0","4":"2008","5":"6","6":"manual(m5)","7":"r","8":"17","9":"26","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"r","8":"16","9":"24","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"15","9":"21","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"1999","5":"8","6":"manual(m5)","7":"r","8":"15","9":"22","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"2008","5":"8","6":"manual(m5)","7":"r","8":"15","9":"23","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"4.6","4":"2008","5":"8","6":"auto(l5)","7":"r","8":"15","9":"22","10":"r","11":"subcompact"},{"1":"ford","2":"mustang","3":"5.4","4":"2008","5":"8","6":"manual(m6)","7":"r","8":"14","9":"20","10":"p","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"28","9":"33","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"24","9":"32","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"25","9":"32","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"23","9":"29","10":"p","11":"subcompact"},{"1":"honda","2":"civic","3":"1.6","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"24","9":"32","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.8","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"26","9":"34","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.8","4":"2008","5":"4","6":"auto(l5)","7":"f","8":"25","9":"36","10":"r","11":"subcompact"},{"1":"honda","2":"civic","3":"1.8","4":"2008","5":"4","6":"auto(l5)","7":"f","8":"24","9":"36","10":"c","11":"subcompact"},{"1":"honda","2":"civic","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"subcompact"},{"1":"hyundai","2":"sonata","3":"2.4","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.4","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"18","9":"27","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.4","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"21","9":"30","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.4","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"21","9":"31","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.5","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"2.5","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"hyundai","2":"sonata","3":"3.3","4":"2008","5":"6","6":"auto(l5)","7":"f","8":"19","9":"28","10":"r","11":"midsize"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"19","9":"29","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"20","9":"28","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.0","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"20","9":"27","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.7","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"17","9":"24","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.7","4":"2008","5":"6","6":"manual(m6)","7":"f","8":"16","9":"24","10":"r","11":"subcompact"},{"1":"hyundai","2":"tiburon","3":"2.7","4":"2008","5":"6","6":"manual(m5)","7":"f","8":"17","9":"24","10":"r","11":"subcompact"},{"1":"jeep","2":"grand cherokee 4wd","3":"3.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"17","9":"22","10":"d","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"3.7","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"15","9":"19","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"15","9":"20","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.7","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"9","9":"12","10":"e","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"19","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"5.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"13","9":"18","10":"r","11":"suv"},{"1":"jeep","2":"grand cherokee 4wd","3":"6.1","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"11","9":"14","10":"p","11":"suv"},{"1":"land rover","2":"range rover","3":"4.0","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"p","11":"suv"},{"1":"land rover","2":"range rover","3":"4.2","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"12","9":"18","10":"r","11":"suv"},{"1":"land rover","2":"range rover","3":"4.4","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"12","9":"18","10":"r","11":"suv"},{"1":"land rover","2":"range rover","3":"4.6","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"p","11":"suv"},{"1":"lincoln","2":"navigator 2wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"17","10":"r","11":"suv"},{"1":"lincoln","2":"navigator 2wd","3":"5.4","4":"1999","5":"8","6":"auto(l4)","7":"r","8":"11","9":"16","10":"p","11":"suv"},{"1":"lincoln","2":"navigator 2wd","3":"5.4","4":"2008","5":"8","6":"auto(l6)","7":"r","8":"12","9":"18","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"4.0","4":"1999","5":"6","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"4.6","4":"2008","5":"8","6":"auto(l6)","7":"4","8":"13","9":"19","10":"r","11":"suv"},{"1":"mercury","2":"mountaineer 4wd","3":"5.0","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"13","9":"17","10":"r","11":"suv"},{"1":"nissan","2":"altima","3":"2.4","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"nissan","2":"altima","3":"2.4","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"27","10":"r","11":"compact"},{"1":"nissan","2":"altima","3":"2.5","4":"2008","5":"4","6":"auto(av)","7":"f","8":"23","9":"31","10":"r","11":"midsize"},{"1":"nissan","2":"altima","3":"2.5","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"23","9":"32","10":"r","11":"midsize"},{"1":"nissan","2":"altima","3":"3.5","4":"2008","5":"6","6":"manual(m6)","7":"f","8":"19","9":"27","10":"p","11":"midsize"},{"1":"nissan","2":"altima","3":"3.5","4":"2008","5":"6","6":"auto(av)","7":"f","8":"19","9":"26","10":"p","11":"midsize"},{"1":"nissan","2":"maxima","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"nissan","2":"maxima","3":"3.0","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"19","9":"25","10":"r","11":"midsize"},{"1":"nissan","2":"maxima","3":"3.5","4":"2008","5":"6","6":"auto(av)","7":"f","8":"19","9":"25","10":"p","11":"midsize"},{"1":"nissan","2":"pathfinder 4wd","3":"3.3","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"nissan","2":"pathfinder 4wd","3":"3.3","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"17","10":"r","11":"suv"},{"1":"nissan","2":"pathfinder 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"14","9":"20","10":"p","11":"suv"},{"1":"nissan","2":"pathfinder 4wd","3":"5.6","4":"2008","5":"8","6":"auto(s5)","7":"4","8":"12","9":"18","10":"p","11":"suv"},{"1":"pontiac","2":"grand prix","3":"3.1","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"26","10":"p","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"3.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"17","9":"27","10":"r","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"3.8","4":"2008","5":"6","6":"auto(l4)","7":"f","8":"18","9":"28","10":"r","11":"midsize"},{"1":"pontiac","2":"grand prix","3":"5.3","4":"2008","5":"8","6":"auto(s4)","7":"f","8":"16","9":"25","10":"p","11":"midsize"},{"1":"subaru","2":"forester awd","3":"2.5","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"18","9":"25","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"18","9":"24","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"20","9":"27","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"19","9":"25","10":"p","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"auto(l4)","7":"4","8":"20","9":"26","10":"r","11":"suv"},{"1":"subaru","2":"forester awd","3":"2.5","4":"2008","5":"4","6":"auto(l4)","7":"4","8":"18","9":"23","10":"p","11":"suv"},{"1":"subaru","2":"impreza awd","3":"2.2","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"21","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.2","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"auto(s4)","7":"4","8":"20","9":"25","10":"p","11":"compact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"auto(s4)","7":"4","8":"20","9":"27","10":"r","11":"compact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"19","9":"25","10":"p","11":"compact"},{"1":"subaru","2":"impreza awd","3":"2.5","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"20","9":"27","10":"r","11":"compact"},{"1":"toyota","2":"4runner 4wd","3":"2.7","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"15","9":"20","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"2.7","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"16","9":"20","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"3.4","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"15","9":"19","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"3.4","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"17","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"16","9":"20","10":"r","11":"suv"},{"1":"toyota","2":"4runner 4wd","3":"4.7","4":"2008","5":"8","6":"auto(l5)","7":"4","8":"14","9":"17","10":"r","11":"suv"},{"1":"toyota","2":"camry","3":"2.2","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"2.2","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"21","9":"27","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"2.4","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"21","9":"31","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"2.4","4":"2008","5":"4","6":"auto(l5)","7":"f","8":"21","9":"31","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"3.0","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"r","11":"midsize"},{"1":"toyota","2":"camry","3":"3.5","4":"2008","5":"6","6":"auto(s6)","7":"f","8":"19","9":"28","10":"r","11":"midsize"},{"1":"toyota","2":"camry solara","3":"2.2","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"21","9":"27","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"2.2","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"2.4","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"21","9":"31","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"2.4","4":"2008","5":"4","6":"auto(s5)","7":"f","8":"22","9":"31","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"3.0","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"18","9":"26","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"3.0","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"r","11":"compact"},{"1":"toyota","2":"camry solara","3":"3.3","4":"2008","5":"6","6":"auto(s5)","7":"f","8":"18","9":"27","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"1999","5":"4","6":"auto(l3)","7":"f","8":"24","9":"30","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"24","9":"33","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"26","9":"35","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"2008","5":"4","6":"manual(m5)","7":"f","8":"28","9":"37","10":"r","11":"compact"},{"1":"toyota","2":"corolla","3":"1.8","4":"2008","5":"4","6":"auto(l4)","7":"f","8":"26","9":"35","10":"r","11":"compact"},{"1":"toyota","2":"land cruiser wagon 4wd","3":"4.7","4":"1999","5":"8","6":"auto(l4)","7":"4","8":"11","9":"15","10":"r","11":"suv"},{"1":"toyota","2":"land cruiser wagon 4wd","3":"5.7","4":"2008","5":"8","6":"auto(s6)","7":"4","8":"13","9":"18","10":"r","11":"suv"},{"1":"toyota","2":"toyota tacoma 4wd","3":"2.7","4":"1999","5":"4","6":"manual(m5)","7":"4","8":"15","9":"20","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"2.7","4":"1999","5":"4","6":"auto(l4)","7":"4","8":"16","9":"20","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"2.7","4":"2008","5":"4","6":"manual(m5)","7":"4","8":"17","9":"22","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"3.4","4":"1999","5":"6","6":"manual(m5)","7":"4","8":"15","9":"17","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"3.4","4":"1999","5":"6","6":"auto(l4)","7":"4","8":"15","9":"19","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"4.0","4":"2008","5":"6","6":"manual(m6)","7":"4","8":"15","9":"18","10":"r","11":"pickup"},{"1":"toyota","2":"toyota tacoma 4wd","3":"4.0","4":"2008","5":"6","6":"auto(l5)","7":"4","8":"16","9":"20","10":"r","11":"pickup"},{"1":"volkswagen","2":"gti","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"f","8":"22","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"gti","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"17","9":"24","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"1.9","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"33","9":"44","10":"d","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"f","8":"22","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.5","4":"2008","5":"5","6":"auto(s6)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.5","4":"2008","5":"5","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.8","4":"1999","5":"6","6":"auto(l4)","7":"f","8":"16","9":"23","10":"r","11":"compact"},{"1":"volkswagen","2":"jetta","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"17","9":"24","10":"r","11":"compact"},{"1":"volkswagen","2":"new beetle","3":"1.9","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"35","9":"44","10":"d","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"1.9","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"29","9":"41","10":"d","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.0","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"r","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.0","4":"1999","5":"4","6":"auto(l4)","7":"f","8":"19","9":"26","10":"r","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.5","4":"2008","5":"5","6":"manual(m5)","7":"f","8":"20","9":"28","10":"r","11":"subcompact"},{"1":"volkswagen","2":"new beetle","3":"2.5","4":"2008","5":"5","6":"auto(s6)","7":"f","8":"20","9":"29","10":"r","11":"subcompact"},{"1":"volkswagen","2":"passat","3":"1.8","4":"1999","5":"4","6":"manual(m5)","7":"f","8":"21","9":"29","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"1.8","4":"1999","5":"4","6":"auto(l5)","7":"f","8":"18","9":"29","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.0","4":"2008","5":"4","6":"auto(s6)","7":"f","8":"19","9":"28","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.0","4":"2008","5":"4","6":"manual(m6)","7":"f","8":"21","9":"29","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.8","4":"1999","5":"6","6":"auto(l5)","7":"f","8":"16","9":"26","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"2.8","4":"1999","5":"6","6":"manual(m5)","7":"f","8":"18","9":"26","10":"p","11":"midsize"},{"1":"volkswagen","2":"passat","3":"3.6","4":"2008","5":"6","6":"auto(s6)","7":"f","8":"17","9":"26","10":"p","11":"midsize"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(mpg) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n_missing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Data summary</caption>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Name</td>
-<td style="text-align: left;">mpg</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">234</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Number of columns</td>
-<td style="text-align: left;">11</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">_______________________</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Column type frequency:</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">________________________</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Group variables</td>
-<td style="text-align: left;">None</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: character</strong></p>
-<table class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">empty</th>
-<th style="text-align: right;">n_unique</th>
-<th style="text-align: right;">whitespace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">manufacturer</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">model</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">trans</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">drv</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">fl</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">class</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 10%">
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 6%">
-<col style="width: 7%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">mean</th>
-<th style="text-align: right;">sd</th>
-<th style="text-align: right;">p0</th>
-<th style="text-align: right;">p25</th>
-<th style="text-align: right;">p50</th>
-<th style="text-align: right;">p75</th>
-<th style="text-align: right;">p100</th>
-<th style="text-align: left;">hist</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">displ</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3.47</td>
-<td style="text-align: right;">1.29</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">▇▆▆▃▁</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">year</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2003.50</td>
-<td style="text-align: right;">4.51</td>
-<td style="text-align: right;">1999.0</td>
-<td style="text-align: right;">1999.0</td>
-<td style="text-align: right;">2003.5</td>
-<td style="text-align: right;">2008.0</td>
-<td style="text-align: right;">2008</td>
-<td style="text-align: left;">▇▁▁▁▇</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">cyl</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5.89</td>
-<td style="text-align: right;">1.61</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">8.0</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">▇▁▇▁▇</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">cty</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">16.86</td>
-<td style="text-align: right;">4.26</td>
-<td style="text-align: right;">9.0</td>
-<td style="text-align: right;">14.0</td>
-<td style="text-align: right;">17.0</td>
-<td style="text-align: right;">19.0</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: left;">▆▇▃▁▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">hwy</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">23.44</td>
-<td style="text-align: right;">5.95</td>
-<td style="text-align: right;">12.0</td>
-<td style="text-align: right;">18.0</td>
-<td style="text-align: right;">24.0</td>
-<td style="text-align: right;">27.0</td>
-<td style="text-align: right;">44</td>
-<td style="text-align: left;">▅▅▇▁▁</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<section id="quotes" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="quotes"><span class="header-section-number">0.2</span> Quotes</h2>
+<ul>
+<li>Quote with <code>&gt;</code></li>
+</ul>
+<blockquote class="blockquote">
+<p>“The truth is rarely pure and never simple.”</p>
+<p>— Oscar Wilde</p>
+</blockquote>
 </section>
-<section id="mpg-and-a-type-of-cars" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="mpg-and-a-type-of-cars"><span class="header-section-number">2.2</span> MPG and a Type of Cars</h2>
-<p>The following boxplot shows how the distribution of highway MPG (<code>hwy</code>) varies by a type of cars (<code>class</code>) <span class="emoji" data-emoji="blue_car">🚙</span> <span class="emoji" data-emoji="truck">🚚</span> <span class="emoji" data-emoji="minibus">🚐</span>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy, <span class="at">fill =</span> class),</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Class"</span>, <span class="at">y =</span> <span class="st">"Highway</span><span class="sc">\n</span><span class="st">MPG"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
-</div>
-</div>
+<section id="inserting-figures" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="inserting-figures"><span class="header-section-number">0.3</span> Inserting Figures</h2>
+<p>For a demonstration of a DANL tiger, see <strong>?@fig-tiger</strong>.</p>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="references" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> References</h1>
+<ul>
+<li><p><a href="https://quarto.org/docs/output-formats/html-basics.html">https://quarto.org/docs/output-formats/html-basics.html</a></p></li>
+<li><p><a href="https://quarto.org/docs/websites/">https://quarto.org/docs/websites/</a></p></li>
+<li><p><a href="http://r4ds.hadley.nz">R for Data Science</a> by <a href="https://hadley.nz">Hadley Wickham</a></p></li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

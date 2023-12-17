@@ -1,0 +1,156 @@
+---
+title: "danl200-hw5-alfano-jordan"
+editor: visual
+---
+
+\[https://github.com/jca100/jca100.github.io(https://github.com/jca100/jca100.github.io)
+
+DANL 200: Homework Assignment 5 PUBLISHED December 4, 2023
+
+Submit the danl200-hw5-YOUR_LAST_NAME-YOUR_FIRST_NAME.qmd file to Brightspace for Q1a and Question 2 in Homework Assignment 5. Rendering the file, danl200-hw5-YOUR_LAST_NAME-YOUR_FIRST_NAME.qmd, should not give any errors. Due is December 11, 11:59 P.M.
+
+Question 1. Personal Website on GitHub Q1a. Provide a link for your GihtHub repository, https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io
+
+https://github.com/jca100/jca100.github.io
+
+Add a URL for your website (https://YOUR_GITHUB_USERNAME.github.io/) in the About section in your GihtHub repository webpage by clicking the setting. For example, the below shows the :
+
+Q1b. Make sure that your GitHub repository, named YOUR_GITHUB_USERNAME.github.io, is set to public.
+
+Update your website at https://YOUR_GITHUB_USERNAME.github.io/index.html to:
+
+Include links to (1) your LinkedIn page, (2) GitHub page (https://github.com/YOUR_GITHUB_USERNAME), and (3) a PDF file of your Rèsume (https://YOUR_GITHUB_USERNAME.github.io/YOUR_RESUME.pdf). Offer a description of yourself, detailing your education background and professional experience. Display your own profile picture with your face, not the one shown below.
+
+Q1c. Change the title of your blog.
+
+That is, to replace Insightful Analytics with your own blog name. Remove the blog posts Post With Code, Starwars, and Beer Markets.
+
+Revise the Welcome To My Blog post.
+
+Post three different blog articles based on data analysis using the following three CSV files:
+
+https://bcdanl.github.io/data/DOHMH_NYC_Restaurant_Inspection.csv https://bcdanl.github.io/data/spotify_all.csv https://bcdanl.github.io/data/beer_markets.csv
+
+Make sure that each blog post has categories and is associated with a proper image file that is displayed as a thumbnail at the list page of the blog. Make sure that each blog post uses emojis properly. (E.g., 😄 🍺 🎶 🍕)
+
+Make sure that each blog post includes its thumbnail image and at least three ggplot figures. You can refer to the previous DANL 200 Homework Assignments and Exams for your blog posts.
+
+Question 2.
+
+NFL in 2022 Add a blog post with your answers for Question 2 to your website (https://YOUR_GITHUB_USERNAME.github.io/).
+
+Make sure that your blog post for Question 2 includes all the questionnaires and your answers to them. Make sure that your blog post for Question 2 has a section for each sub-question (e.g., Q2a, Q2b) in Question 2, so that the Table of Contents display the section for each questionnaire.
+
+The following is the data.frame for Question 2. NFL2022_stuffs \<- read_csv('https://bcdanl.github.io/data/NFL2022_stuffs.csv')
+
+play_id <dbl> game_id <chr> drive <dbl> week <dbl> posteam <chr> qtr <dbl> down <dbl> half_seconds_remaining <dbl> pass <dbl> wp <dbl> 1 2022_01_BAL_NYJ NA 1 NA 1 NA 1800 0 5.462618e-01 43 2022_01_BAL_NYJ 1 1 NYJ 1 NA 1800 0 5.462618e-01 68 2022_01_BAL_NYJ 1 1 NYJ 1 1 1796 0 5.469690e-01 89 2022_01_BAL_NYJ 1 1 NYJ 1 1 1769 1 5.725734e-01 115 2022_01_BAL_NYJ 1 1 NYJ 1 2 1765 0 5.545366e-01 136 2022_01_BAL_NYJ 1 1 NYJ 1 3 1741 1 5.401673e-01 172 2022_01_BAL_NYJ 1 1 NYJ 1 4 1733 0 4.880532e-01 202 2022_01_BAL_NYJ 2 1 BAL 1 1 1722 1 4.958201e-01 230 2022_01_BAL_NYJ 2 1 BAL 1 2 1701 1 4.965942e-01 254 2022_01_BAL_NYJ 2 1 BAL 1 3 1661 0 4.987317e-01 ... 1-10 of 10,000 rows NFL2022_stuffs is the data.frame that contains information about NFL games in year 2022, in which the unit of observation is a single play for each drive in a NFL game. Variable description play_id: Numeric play identifier that when used with game_id and drive provides the unique identifier for a single play game_id: Ten digit identifier for NFL game. drive: Numeric drive number in the game. week: Season week. posteam: String abbreviation for the team with possession. qtr: Quarter of the game (5 is overtime). half_seconds_remaining: Numeric seconds remaining in the half. down: The down for the given play. Basically you get four attempts (aka downs) to move the ball 10 yards (by either running with it or passing it). If you make 10 yards then you get another set of four downs. pass: Binary indicator if the play was a pass play. wp: Estimated winning probability for the posteam given the current situation at the start of the given play.
+
+Q2a. In data.frame, NFL2022_stuffs, remove observations for which values of posteam is missing.
+
+Answer: \# Assuming NFL2022_stuffs is your data frame
+
+NFL2022_stuffs \<- na.omit(NFL2022_stuffs\[, !is.na(NFL2022_stuffs\$posteam)\])
+
+Q2b. Summarize the mean value of pass for each posteam when all the following conditions hold: wp is greater than 20% and less than 75%; down is less than or equal to 2; and half_seconds_remaining is greater than 120.
+
+Answer:
+
+library(dplyr)
+
+result \<- NFL2022_stuffs %\>%
+
+filter(wp \> 0.20 & wp \< 0.75 & down \<= 2 & half_seconds_remaining \> 120) %\>%
+
+group_by(posteam) %\>%
+
+summarize(mean_pass = mean(pass, na.rm = TRUE))
+
+Q2c. Provide both (1) a ggplot code with geom_point() using the resulting data.frame in Q2b and (2) a simple comments to describe the mean value of pass for each posteam. In the ggplot, reorder the posteam categories based on the mean value of pass in ascending or in descending order.
+
+Answer:
+
+library(ggplot2)
+
+result\$posteam \<- factor(result\$posteam, levels = result\$posteam\[order(result\$mean_pass)\])
+
+ggplot(result, aes(x = posteam, y = mean_pass)) +
+
+geom_point() +
+
+labs(title = "Mean Value of pass for each posteam",
+
+x = "Posteam",
+
+y = "Mean Pass Value")
+
+Q2d. Consider the following data.frame, NFL2022_epa: NFL2022_epa \<- read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')
+
+Create the data.frame, NFL2022_stuffs_EPA, that includes
+
+All the variables in the data.frame, NFL2022_stuffs; The variables, passer, receiver, and epa, from the data.frame, NFL2022_epa. by joining the two data.frames. In the resulting data.frame, NFL2022_stuffs_EPA, remove observations with NA in passer.
+
+Answer:
+
+library(dplyr)
+
+NFL2022_stuffs_EPA \<- inner_join(NFL2022_stuffs, NFL2022_epa\[, c("passer", "receiver", "epa")\], by = "passer")
+
+NFL2022_stuffs_EPA \<- NFL2022_stuffs_EPA\[complete.cases(NFL2022_stuffs_EPA\$passer), \]
+
+Q2e. Provide both (1) a single ggplot and (2) a simple comment to describe the NFL weekly trend of weekly mean value of epa for each of the following two passers, "J.Allen" "P.Mahomes"
+
+Answer: library(ggplot2)
+
+ggplot(NFL2022_stuffs_EPA, aes(x = week, y = epa, color = passer)) +
+
+geom_line() +
+
+geom_point() +
+
+labs(title = "NFL Weekly Trend of Mean EPA for J.Allen and P.Mahomes",
+
+x = "Week",
+
+y = "Mean EPA") +
+
+color(values = c("J.Allen" = "blue", "P.Mahomes" = "red"))
+
+Q2f. Calculate the difference between the mean value of epa for "J.Allen" the mean value of epa for "P.Mahomes" for each value of week.
+
+Answer:
+
+library(dplyr)
+
+group_by(week) %\>%
+
+summarize(mean_epa_diff = mean(epa\[passer == "J.Allen"\], na.rm = TRUE) -
+
+mean(epa\[passer == "P.Mahomes"\], na.rm = TRUE))
+
+Q2g. Summarize the resulting data.frame in Q2d, with the following four variables:
+
+posteam: String abbreviation for the team with possession. passer: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.) mean_epa: Mean value of epa in 2022 for each passer n_pass: Number of observations for each passer Then find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.
+
+Answer:
+
+library(dplyr)
+
+summary_data \<- NFL2022_stuffs_EPA %\>%
+
+group_by(posteam, passer) %\>%
+
+summarize(mean_epa = mean(epa, na.rm = TRUE),
+
+n_pass = n())
+
+quantile_threshold \<- quantile(summary_data\$n_pass, 0.75)
+
+top_passers \<- summary_data %\>%
+
+filter(n_pass \>= quantile_threshold) %\>%
+
+top_n(10, wt = mean_epa)
+
+top_passers
+
+## 
