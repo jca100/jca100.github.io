@@ -3,9 +3,9 @@ title: DANL Project
 subtitle: "Data-Driven Mastery: Unlocking Business Potential"
 author: 
   - Jocelyn Matusiak
-  - Jordan 
-  - Julia
-  - Sophia
+  - Jordan Alfano
+  - Julia Candee
+  - Sophia Frisiras
 
 toc: true
 toc-title: "Table of Contents"
@@ -40,8 +40,9 @@ nobs <- format(round(nrow(day_wise), 0),
                 big.mark=",")
 ```
 
-
+```{r}
 rmarkdown::paged_table(day_wise) 
+```
 
 ```{r}
 day_wise %>% 
