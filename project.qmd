@@ -28,10 +28,6 @@ This project matters because it affected the rate at which people are contractin
 Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus.. 
 
 
-```
-
- 
-
 
 ```{r setup, include = FALSE}
 library(tidyverse)
@@ -39,6 +35,8 @@ library(hrbrthemes)
 library(skimr)
 
 ```
+ 
+
 
 
 ```{r}
@@ -74,29 +72,16 @@ day_wise <- day_wise %>%
             .groups = "drop") 
 
 ```
-rmarkdown::paged_table(day_wise) 
 
 
-# Example Title {.unnumbered}
-- This is an unnumbered section.
 
 
 
 
 ## Analysis
 
+As seen across the world, so many people were pessimistic about the pandemic. Including myself and my group. Based off what the news was telling us, we started to believe that there would be no hope, but there is and there definitely was! In the end, there were more people who were saved and beat the virus compared to the unfortunate ones who did not make it. There is no doubt that the world has been changed but it is relevant to know that there were more people being helped and cured compared to the amount of people that were dying because of this pandemic. 
 
-## Quotes
-- Quote with `>`
-
-> "The truth is rarely pure and never simple."
->
-> --- Oscar Wilde
-
-
-
-## Inserting Figures
-For a demonstration of a DANL tiger, see @fig-tiger.
 
 
 

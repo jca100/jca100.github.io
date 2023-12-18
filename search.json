@@ -109,7 +109,7 @@
     "href": "project.html",
     "title": "DANL Project",
     "section": "",
-    "text": "This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying.\nOur data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus..\n:::\nrmarkdown::paged_table(day_wise)\nday_wise %&gt;% \n  ggplot(aes(x = log(Deaths), \n             y = log(Recovered))) + \n  geom_point(alpha = .1, color = 'purple') +\n  geom_smooth(method = lm, se = F) +\n  theme_bw() +\n  theme(legend.position = 'top')\nday_wise &lt;- day_wise %&gt;% \n  group_by(Deaths, Recovered) %&gt;% \n  summarise(Recovered_tot = sum(Recovered, na.rm = T),\n            Deaths_mean = round(mean(Deaths, na.rm = T), 2),\n            .groups = \"drop\")\nrmarkdown::paged_table(day_wise)"
+    "text": "This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying.\nOur data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus..\nday_wise &lt;- read_csv('https://jem10126.github.io/day_wise.csv')\nnvars &lt;- format(round(ncol(day_wise), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(day_wise), 0), \n                nsmall=0, \n                big.mark=\",\")\nrmarkdown::paged_table(day_wise)\nday_wise %&gt;% \n  ggplot(aes(x = log(Deaths), \n             y = log(Recovered))) + \n  geom_point(alpha = .1, color = 'purple') +\n  geom_smooth(method = lm, se = F) +\n  theme_bw() +\n  theme(legend.position = 'top')\nday_wise &lt;- day_wise %&gt;% \n  group_by(Deaths, Recovered) %&gt;% \n  summarise(Recovered_tot = sum(Recovered, na.rm = T),\n            Deaths_mean = round(mean(Deaths, na.rm = T), 2),\n            .groups = \"drop\")"
   },
   {
     "objectID": "project.html#summary-statistics",
@@ -284,7 +284,7 @@
     "href": "project.html#analysis",
     "title": "DANL Project",
     "section": "0.1 Analysis",
-    "text": "0.1 Analysis"
+    "text": "0.1 Analysis\nAs seen across the world, so many people were pessimistic about the pandemic. Including myself and my group. Based off what the news was telling us, we started to believe that there would be no hope, but there is and there definitely was! In the end, there were more people who were saved and beat the virus compared to the unfortunate ones who did not make it. There is no doubt that the world has been changed but it is relevant to know that there were more people being helped and cured compared to the amount of people that were dying because of this pandemic."
   },
   {
     "objectID": "project.html#quotes",
