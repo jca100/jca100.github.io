@@ -188,6 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Introduction: This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying.</p>
 <p>Data Summary: Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus..</p>
+<hr>
 <p>This is our R set up. In order to demo certain data we need to go into our library and import the packages we will need order to proceed with this project. The example our case is demonstrated below.</p>
 <p>We need to assign a name to the data frame that we will be using and copy the path name of the github repository that we will be using in this project. Jocelyn’s repository is exemplified below.</p>
 <div class="cell">
@@ -211,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>We created a ggplot figure in order for us to see exactly how the relationship between amount of deaths and recoveries intertwinds with one another. My group and I decided that a line plot would be of best fit because line plots are useful to track changes over short and long periods of time.</p>
+<p>Data Visualization: We created a ggplot figure in order for us to see exactly how the relationship between amount of deaths and recoveries intertwinds with one another. My group and I decided that a line plot would be of best fit because line plots are useful to track changes over short and long periods of time.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(Deaths), </span>
@@ -224,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
-<p>We used the group by function here in order to group rows that have the same values into summary rows, which then allows us to use the function summary, in order to summarize the statistics provided.</p>
+<p>Data Transformation: We used the group by function here in order to group rows that have the same values into summary rows, which then allows us to use the function summary, in order to summarize the statistics provided.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="ot">&lt;-</span> day_wise <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Deaths, Recovered) <span class="sc">%&gt;%</span> </span>

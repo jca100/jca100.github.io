@@ -26,7 +26,7 @@ This project matters because it affected the rate at which people are contractin
 Data Summary:
 Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus.. 
 
-
+-----------------------------------------------------------------------------
 
 This is our R set up. In order to demo certain data we need to go into our library and import the packages we will need order to proceed with this project. The example our case is demonstrated below. 
 ```{r setup, include = FALSE}
@@ -59,6 +59,7 @@ rmarkdown::paged_table(day_wise)
 ```
 
 
+Data Visualization:
 We created a ggplot figure in order for us to see exactly how the relationship between amount of deaths and recoveries intertwinds with one another. My group and I decided that a line plot would be of best fit because line plots are useful to track changes over short and long periods of time. 
 
 ```{r}
@@ -73,7 +74,7 @@ day_wise %>%
 ```
 
 
-
+Data Transformation:
 We used the group by function here in order to group rows that have the same values into summary rows, which then allows us to use the function summary, in order to summarize the statistics provided. 
 ```{r}
 
