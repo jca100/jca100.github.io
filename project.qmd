@@ -22,6 +22,17 @@ execute:
 ---
 
 
+This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying. 
+
+
+Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus.. 
+
+
+```
+
+ 
+
+
 ```{r setup, include = FALSE}
 library(tidyverse)
 library(hrbrthemes)
@@ -98,3 +109,8 @@ For a demonstration of a DANL tiger, see @fig-tiger.
 - [https://quarto.org/docs/websites/](https://quarto.org/docs/websites/)
 
 - [R for Data Science](http://r4ds.hadley.nz) by [Hadley Wickham](https://hadley.nz)
+
+
+##Group Relevancy 
+Sophia Frisiras helped on this project! She attented meetings and helped us whenever we needed some extra assitance! 
+
