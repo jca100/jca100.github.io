@@ -186,8 +186,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying.</p>
-<p>Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus..</p>
+<p>Introduction: This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying.</p>
+<p>Data Summary: Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus..</p>
+<p>This is our R set up. In order to demo certain data we need to go into our library and import the packages we will need order to proceed with this project. The example our case is demonstrated below.</p>
+<p>We need to assign a name to the data frame that we will be using and copy the path name of the github repository that we will be using in this project. Jocelyn’s repository is exemplified below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://jem10126.github.io/day_wise.csv'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nvars <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">round</span>(<span class="fu">ncol</span>(day_wise), <span class="dv">0</span>), </span>
@@ -197,6 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">nsmall=</span><span class="dv">0</span>, </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">big.mark=</span><span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Here is the paged table using <code>rmarkdown::paged_table()</code> with the <code>results = 'asis'</code> chunk option.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">paged_table</span>(day_wise) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -208,6 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>We created a ggplot figure in order for us to see exactly how the relationship between amount of deaths and recoveries intertwinds with one another. My group and I decided that a line plot would be of best fit because line plots are useful to track changes over short and long periods of time.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(Deaths), </span>
@@ -220,6 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
+<p>We used the group by function here in order to group rows that have the same values into summary rows, which then allows us to use the function summary, in order to summarize the statistics provided.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>day_wise <span class="ot">&lt;-</span> day_wise <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Deaths, Recovered) <span class="sc">%&gt;%</span> </span>
@@ -229,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="analysis" class="level2" data-number="0.1">
 <h2 data-number="0.1" class="anchored" data-anchor-id="analysis"><span class="header-section-number">0.1</span> Analysis</h2>
-<p>As seen across the world, so many people were pessimistic about the pandemic. Including myself and my group. Based off what the news was telling us, we started to believe that there would be no hope, but there is and there definitely was! In the end, there were more people who were saved and beat the virus compared to the unfortunate ones who did not make it. There is no doubt that the world has been changed but it is relevant to know that there were more people being helped and cured compared to the amount of people that were dying because of this pandemic.</p>
+<p>As seen across the world, so many people were pessimistic about the pandemic. Including my group members and I. In the end, there were more people who were saved and beat the virus compared to the unfortunate ones who did not make it. There is no doubt that the world has been changed but it is relevant to know that there were more people being helped and cured compared to the amount of people that were dying because of this deadly pandemic.</p>
 <p><br><br><br><br></p>
 </section>
 <section id="references" class="level1" data-number="1">

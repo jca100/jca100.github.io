@@ -20,16 +20,17 @@ execute:
   warning: false
 
 ---
-
-
+Introduction:
 This project matters because it affected the rate at which people are contracting and healing from the COVID 19 virus at a daily rate. There is a greater amount of people who are recovering compared to the people who are dying. 
 
-
+Data Summary:
 Our data visualization entails how both death and recovered are increasing at an exponential rate. This provides the assumption that while many may be dying there are more people recovering. In the real world this provides hope for those who are suffering from the virus.. 
 
 
 
+This is our R set up. In order to demo certain data we need to go into our library and import the packages we will need order to proceed with this project. The example our case is demonstrated below. 
 ```{r setup, include = FALSE}
+
 library(tidyverse)
 library(hrbrthemes)
 library(skimr)
@@ -38,8 +39,10 @@ library(skimr)
  
 
 
+We need to assign a name to the data frame that we will be using and copy the path name of the github repository that we will be using in this project. Jocelyn's repository is exemplified below. 
 
 ```{r}
+
 day_wise <- read_csv('https://jem10126.github.io/day_wise.csv')
 nvars <- format(round(ncol(day_wise), 0), 
                 nsmall=0, 
@@ -49,11 +52,17 @@ nobs <- format(round(nrow(day_wise), 0),
                 big.mark=",")
 ```
 
+
+Here is the paged table using `rmarkdown::paged_table()` with the `results = 'asis'` chunk option.
 ```{r}
 rmarkdown::paged_table(day_wise) 
 ```
 
+
+We created a ggplot figure in order for us to see exactly how the relationship between amount of deaths and recoveries intertwinds with one another. My group and I decided that a line plot would be of best fit because line plots are useful to track changes over short and long periods of time. 
+
 ```{r}
+
 day_wise %>% 
   ggplot(aes(x = log(Deaths), 
              y = log(Recovered))) + 
@@ -64,7 +73,11 @@ day_wise %>%
 ```
 
 
+
+We used the group by function here in order to group rows that have the same values into summary rows, which then allows us to use the function summary, in order to summarize the statistics provided. 
 ```{r}
+
+
 day_wise <- day_wise %>% 
   group_by(Deaths, Recovered) %>% 
   summarise(Recovered_tot = sum(Recovered, na.rm = T),
@@ -80,7 +93,9 @@ day_wise <- day_wise %>%
 
 ## Analysis
 
-As seen across the world, so many people were pessimistic about the pandemic. Including myself and my group. Based off what the news was telling us, we started to believe that there would be no hope, but there is and there definitely was! In the end, there were more people who were saved and beat the virus compared to the unfortunate ones who did not make it. There is no doubt that the world has been changed but it is relevant to know that there were more people being helped and cured compared to the amount of people that were dying because of this pandemic. 
+As seen across the world, so many people were pessimistic about the pandemic. Including my group members and I. In the end, there were more people who were saved and beat the virus compared to the unfortunate ones who did not make it. There is no doubt that the world has been changed but it is relevant to know that there were more people being helped and cured compared to the amount of people that were dying because of this deadly pandemic. 
+
+
 
 
 
