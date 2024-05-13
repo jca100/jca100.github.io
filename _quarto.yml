@@ -3,18 +3,33 @@ project:
   output-dir: "."
 
 website:
-  title: "Jordan"
-  navbar:
+  title: "Jordan Alfano"
+  navbar: 
     pinned: true
     left:
       - text: Project
         href: project.qmd
-      - text: Quarto Template
-        href: quarto-template.qmd
       - text: Blog
         href: blog-listing.qmd
+        menu: 
+          - text: Spotify with ipynb
+          - href: posts/spotify.ipynb
+          - text: Python Data Aanalysis
+        
+          
+          - text: Python Basic with ipynb
+            href: basic-python-intro.ipynb
+          - text: Python Basic with Pandas
+            href: basic_python_intro2.ipynb
+      - text: DANL 210 - Lectures
+        menu: 
+          - text: Lecture 06
+            href: https://bcdanl.github.io/210/danl-lec/danl-210-lec-06-2024-0208.html
+          - text: Lecture 07
+            href: https://bcdanl.github.io/210/danl-lec/danl-210-lec-07-2024-0213.html
+            
   page-footer: 
-    center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
+    center: "Powered with GitHub and Quarto<br>© Jordan, 2024"
 
 format:
   html:

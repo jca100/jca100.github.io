@@ -2,6 +2,8 @@
   {
     "listing": "/blog-listing.html",
     "items": [
+      "/posts/spotify.html",
+      "/posts/py-basics/basic_python_intro_blog.html",
       "/posts/restaurant/restaurants.html",
       "/posts/beer-markets/beermarkets.html",
       "/posts/spotifyall/index.html",

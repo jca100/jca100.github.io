@@ -1,6 +1,6 @@
 ---
 title: "DANL 200: Introduction to Data Analytics<br>Project"
-subtitle: "Quarto Template<br><br>" 
+subtitle: "<br><br>" 
 author: 
   - name: Jordan Alfano 
      
