@@ -1,5 +1,5 @@
 ---
-title: "Jordan Alfano" 
+title: "Jordan Alfano"
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
   image: img/Portrait.jpg 

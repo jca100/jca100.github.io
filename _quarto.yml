@@ -8,7 +8,7 @@ website:
     pinned: true
     left:
       - text: Project
-        href: project.qmd
+        href: danl_210_project.ipynb
       - text: Blog
         href: blog-listing.qmd
         menu: 
