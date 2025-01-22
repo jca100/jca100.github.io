@@ -19,7 +19,7 @@ about:
     - icon: mailbox
       text: Email
       href: mailto:jca100@geneseo.edu
-
+ 
 ---
 
 I am a Sophomore candidate for a Bachelors in Data Analytics at SUNY Geneseo. I enjoy going to the gym on my free time. When I am not doing work or have to taken on a multitude of responsibilities, my time is spent with my family and friends. 
