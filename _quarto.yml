@@ -1,32 +1,37 @@
-project:
+project: 
   type: website
-  output-dir: "."
+  output-dir: "." 
 
 website:
-  title: "Jordan Alfano"
-  navbar: 
+  title: "Jordan A"
+  navbar:
     pinned: true
     left:
-      - text: Project
-        href: danl_210_project.ipynb
+      - text: Project 320
+        href: danl_proj_nba.ipynb
+      - text: R Basics
+        href: danl-310-quarto-r.qmd
+      - text: Python DANL
+        menu: 
+          - text: Python
+            href: danl-320-python-basic.ipynb
+          - text: Pandas
+            href: pandas_basics.ipynb
+          - text: Seaborn
+            href: seaborn_basics.ipynb
+    
+      - text: Project NBA
+        menu:  
+          - text: danl_proj_nba.ipynb
+          
+      - text: PySpark
+        menu:
+          - text: Explanation of all three 
+            href: PySpark.ipynb
+
       - text: Blog
         href: blog-listing.qmd
-        menu: 
-          - text: Spotify with ipynb
-          - href: posts/spotify.ipynb
-          - text: Python Data Aanalysis
-        
-          
-          - text: Python Basic with ipynb
-            href: basic-python-intro.ipynb
-          - text: Python Basic with Pandas
-            href: basic_python_intro2.ipynb
-      - text: DANL 210 - Lectures
-        menu: 
-          - text: Lecture 06
-            href: https://bcdanl.github.io/210/danl-lec/danl-210-lec-06-2024-0208.html
-          - text: Lecture 07
-            href: https://bcdanl.github.io/210/danl-lec/danl-210-lec-07-2024-0213.html
+    
             
   page-footer: 
     center: "Powered with GitHub and Quarto<br>© Jordan, 2024"

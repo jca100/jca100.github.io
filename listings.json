@@ -2,11 +2,11 @@
   {
     "listing": "/blog-listing.html",
     "items": [
-      "/posts/spotify.html",
+      "/posts/housing/Blog-Post-for-DANL-320-hw 4.html",
+      "/posts/ggplot/ggplot.html",
       "/posts/py-basics/basic_python_intro_blog.html",
       "/posts/restaurant/restaurants.html",
       "/posts/beer-markets/beermarkets.html",
-      "/posts/spotifyall/index.html",
       "/posts/welcome/index.html"
     ]
   }

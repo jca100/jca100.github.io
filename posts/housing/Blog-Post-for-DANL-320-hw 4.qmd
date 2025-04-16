@@ -1,0 +1,70 @@
+---
+title: "Predicting housing price through machine learning"
+editor: visual
+image: housing.webp
+---
+
+## 🏡 Part 1: Exploring Housing Markets with Regression Trees
+
+In Part 1 of Homework 3, we explored **housing market data** using tree-based modeling techniques. Our goal was to predict **`medv`** (median home value) using various predictors in the Boston housing data set. The task focused on **decision trees**, pruning techniques, and evaluating model complexity with **cross-validation**.
+
+### 📊 Step 1: Fit a Regression Tree
+
+We first split the data set into training and testing subsets, then fit a **regression tree** to the training data using:
+
+``` {.python}
+tree_model = DecisionTreeRegressor(min_impurity_decrease=0.005, random_state=42)
+tree_model.fit(X_train, y_train)
+```
+
+This method allowed the tree to grow naturally, stopping splits when the impurity reduction was too small.
+
+### 🌳 Step 2: Visualize the Tree
+
+To better understand how the model made predictions, we plotted the tree using:
+
+``` {.python}
+plot_tree(tree_model, feature_names=X_train.columns, filled=True, rounded=True)
+```
+
+The result was a readable, interpretable model showing how features like `RM`, `LSTAT`, and `DIS` influenced median housing value in various submarkets.
+
+### ⚖️ Step 3: Prune the Tree with Cross-Validation
+
+To prevent overfitting and simplify the tree, we computed a **cost-complexity pruning path** using:
+
+``` {.python}
+path = tree_model.cost_complexity_pruning_path(X_train, y_train) 
+```
+
+We then used **10-fold cross-validation** to compare test-set performance across various `ccp_alpha` values and selected the one with the **lowest mean squared error (MSE)**. The result: a **pruned tree** with fewer leaves and more robust generalization.
+
+### 📉 Step 4: Compare Model Performance
+
+We compared the pruned tree to:
+
+The **full decision tree**
+
+A **random forest**
+
+An **XGBoost model**
+
+**Results:**
+
+| Model              | Test MSE |
+|--------------------|----------|
+| OLS (HW2)          | 0.00147  |
+| Full Decision Tree | 0.00173  |
+| Pruned Tree        | 0.00252  |
+| Random Forest      | 0.00212  |
+| XGBoost            | 0.00196  |
+
+Surprisingly, the **OLS model from Homework 2** still had the lowest MSE, highlighting that for this dataset, a **simple linear model** was highly effective.
+
+### ✅ Key Takeaways
+
+Decision trees offer **interpretability**, but require pruning or ensemble methods to prevent overfitting.
+
+Ensemble models like Random Forest and XGBoost are powerful, but don’t always outperform simpler models.
+
+Always validate model assumptions and complexity against real-world performance (e.g., test-set MSE).

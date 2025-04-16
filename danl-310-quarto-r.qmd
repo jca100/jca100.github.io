@@ -1,0 +1,210 @@
+---
+title: Quarto with R 
+subtitle: "DANL 399: Introduction to Data Analytics"
+author: 
+  - name: YOUR NAME
+  - name: YOUR COWORKER 1
+date: 2025-01
+
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  message: false
+  fig-width: 9
+  # fig-height: 5
+  
+format: 
+  html:
+    toc: true
+    number-sections: true
+    code-fold: show       # https://quarto.org/docs/output-formats/html-code.html  
+    code-tools: true      # https://quarto.org/docs/reference/cells/cells-jupyter.html
+    highlight-style: atom-one # atom-one tango espresso
+
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+library(DT)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 90,
+                               size = rel(1.33),
+                               margin = margin(0,10,0,0))
+                )
+          )
+```
+
+
+# R Basics
+
+> “Tidy datasets are all alike, but every messy dataset is messy in its own way.”
+— Hadley Wickham
+
+R is a powerful language and environment for statistical computing and graphics. It is widely used among statisticians and data analysts for data analysis and developing statistical software. Here are some basic concepts and elements of R to help you get started:
+
+
+<br><br>
+
+## Variables
+Variables in R are used to store data. You can create a variable using the assignment operator `<-` (**option/Alt + -**). For example:
+
+```{r}
+my_variable <- 10
+```
+
+This will store the value `10` in `my_variable`.
+
+<br><br>
+
+## Data Types
+- R has several basic data types:
+
+  - **Numeric**: For decimal values like `2.5`.
+  - **Integer**: For whole numbers like `2L` (the `L` tells R it is an integer).
+  - **Character**: For text or string values, e.g., `"Hello"`.
+  - **Logical**: For boolean values (`TRUE` or `FALSE`).
+
+<br><br>
+
+## Vectors
+Vectors are a basic data structure in R. They contain elements of the same type. You can create a vector using the `c()` function:
+
+```{r}
+my_vector <- c(1, 2, 3, 4, 5)
+```
+
+<br><br>
+
+## Data Frames
+Data frames are used for storing data tables in R. It is a list of vectors of equal length. For example, to create a simple data frame:
+
+```{r}
+df <- data.frame(
+  Name = c("Alice", "Bob"), 
+  Age = c(25, 30)
+  )
+
+```
+
+<br><br>
+
+## Functions
+Functions are used to carry out specific tasks in R. For example, `sum()` is a function that adds numbers together:
+
+```{r}
+sum(1, 2, 3) # Returns 6
+```
+
+<br><br>
+
+## Packages
+R has a vast collection of packages for various statistical tasks. You can install a package using `install.packages("packageName")` and load it using `library(packageName)`.
+
+```{r}
+#| eval: false
+
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+<br><br>
+
+## Help System
+To get help on a specific function or topic, use the `help()` function or the shorthand `?`, like `?sum` on R Console.
+
+<br><br><br><br>
+
+
+
+# R Visualization
+
+`ggplot2` is a data visualization package for the R programming language, based on the grammar of graphics. The grammar of graphics is a framework for creating graphics in a structured way, focusing on the components of a graphic such as data, aesthetic mappings, geometric objects, statistical transformations, scales, coordinate systems, and facets. `ggplot2` makes it easy to create complex plots from data in a dataframe.
+
+## Key Concepts
+
+- **Data**: The raw data that you want to plot.
+- **aes() (Aesthetic Mappings)**: Defines how data are mapped to color, size, shape, and other visual properties.
+- **Geoms (Geometric Objects)**: The type of objects that represent data points, like points, lines, bars, etc.
+- **Facets**: For creating small multiples, splitting data into subsets and displaying the same plot for each subset.
+- **Scales**: Control how data values are translated to visual properties.
+- **Coordinate Systems**: The plane in which data is plotted, e.g., Cartesian, polar.
+- **Themes**: Control the overall appearance of the plot, like background color, grid lines, and font sizes.
+
+## Examples
+
+Let's go through some examples to illustrate how `ggplot` can be used to create different types of visualizations. 
+
+### Scatter Plot
+
+Creating a scatter plot to explore the relationship between two variables, say `mpg` (miles per gallon) and `wt` (weight of the car) from the `mtcars` dataset.
+
+```{r}
+
+ggplot(mtcars, aes(x = wt, y = mpg)) + 
+  geom_point() +
+  labs(x = "Weight of Car", y = "Miles Per Gallon",
+       title = "Scatter plot of MPG vs Car Weight")
+```
+
+This code block creates a scatter plot where car weight is on the x-axis and miles per gallon on the y-axis. Each point represents a car.
+
+### Bar Chart
+
+Creating a bar chart to show the count of cars by the number of cylinders.
+
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) + 
+  geom_bar() + 
+  labs(x = "Number of Cylinders", y = "Count",
+       title = "Count of Cars by Cylinders")
+```
+
+This plots a bar chart where each bar represents the count of cars with a certain number of cylinders.
+
+### Line Graph
+
+Plotting a line graph, assuming we have a time series data.frame `economics` that is part of `ggplot2` package.
+
+```{r}
+ggplot(economics, aes(x = date, y = unemploy)) + 
+  geom_line() +
+  labs(x = "Year", y = "Number of Unemployed Persons",
+       title = "Unemployment over Time") 
+```
+
+This code plots the unemployment numbers over time, with time on the x-axis and the number of unemployed persons on the y-axis.
+
+### Faceted Plot
+
+Creating a faceted plot to compare scatter plots of `mpg` vs `wt` across different numbers of cylinders.
+
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg)) + 
+  geom_point() +
+  facet_wrap(~cyl) +
+  labs(title = "MPG vs Weight by Number of Cylinders")
+```
+
+This splits the data into subsets based on the number of cylinders and creates a scatter plot for each subset.
+
+## Conclusion
+
+`ggplot2` provides a powerful and flexible system for making a wide variety of plots. By understanding the grammar of graphics upon which it is based, you can build up complex visualizations from simple components, allowing for a deep and intuitive exploration of data.
+
+
+# References
+
+- [R for Data Science](http://r4ds.hadley.nz) by [Hadley Wickham](https://hadley.nz)
+

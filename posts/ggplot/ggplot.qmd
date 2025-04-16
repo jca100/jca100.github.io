@@ -1,0 +1,100 @@
+---
+title: "`ggplot` basics"
+subtitle: "Summary for Lecture 3,4,5 DANL 310"
+author: "Jordan A "
+date: "2025-02-12"
+categories: [ggplot, visualization]
+image: "ggplotimage.png"
+
+execute: 
+  warning: false
+  message: false
+  
+toc: true
+---
+```{r}
+#| include: false
+
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="lightgray"),
+                axis.title.x  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(10,0,0,0)),
+                axis.title.y  = element_text(angle = 0,
+                                            size = rel(1.5),
+                                            margin = margin(0,10,0,0))
+                )
+          )
+
+# description: "A brief introduction to ggplot2, covering essential concepts from Lecture 3, Lecture 4, and Classwork 4. DANL 310"
+
+```
+
+# Introduction
+
+`ggplot2` is a powerful and flexible R package for creating data visualizations. It follows the **Grammar of Graphics** approach, allowing users to layer components to build complex plots systematically.
+
+# Key Concepts
+
+## 1. Creating a Basic Plot
+
+To create a `ggplot`, you start with the `ggplot()` function, specifying a dataset and mapping aesthetics using `aes()`.
+
+```{r}
+
+library(ggplot2)
+ggplot(data = mpg, aes(x = displ, y = hwy)) +
+  geom_point()
+
+
+
+```
+
+
+## 2. Adding Layers
+Layers such as `geom_point()`, `geom_line()`, and `geom_bar()` define how data is represented.
+
+```{r}
+
+ggplot(mpg, aes(x = class)) +
+  geom_bar()
+
+
+```
+
+
+## 3. Customizing the Appearance
+Themes, scales, and labels allow customization.
+
+```{r}
+
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(color = "blue") +
+  labs(title = "Displacement vs Highway MPG", x = "Engine Displacement", y = "Highway MPG") +
+  theme_minimal()
+
+
+```
+
+## 4. Faceting
+Faceting creates small multiples based on categorical variables.
+
+
+```{r}
+
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  facet_wrap(~ class)
+```
+
+
+
+# Conclusion
+`ggplot2` provides an intuitive way to build visualizations layer by layer. Mastering these basics sets a strong foundation for more advanced customizations and analyses.

@@ -1,0 +1,17 @@
+{
+  "hash": "f92d56f6c206928ec37ac288e3c1f040",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"`ggplot` basics\"\nsubtitle: \"Summary for Lecture 3,4,5 DANL 310\"\nauthor: \"Jordan A \"\ndate: \"2025-02-12\"\ncategories: [ggplot, visualization]\nimage: \"ggplotimage.png\"\n\nexecute: \n  warning: false\n  message: false\n  \ntoc: true\n---\n\n\n\n\n# Introduction\n\n`ggplot2` is a powerful and flexible R package for creating data visualizations. It follows the **Grammar of Graphics** approach, allowing users to layer components to build complex plots systematically.\n\n# Key Concepts\n\n## 1. Creating a Basic Plot\n\nTo create a `ggplot`, you start with the `ggplot()` function, specifying a dataset and mapping aesthetics using `aes()`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(data = mpg, aes(x = displ, y = hwy)) +\n  geom_point()\n```\n\n::: {.cell-output-display}\n![](ggplot_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n\n## 2. Adding Layers\nLayers such as `geom_point()`, `geom_line()`, and `geom_bar()` define how data is represented.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(mpg, aes(x = class)) +\n  geom_bar()\n```\n\n::: {.cell-output-display}\n![](ggplot_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n\n\n## 3. Customizing the Appearance\nThemes, scales, and labels allow customization.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(mpg, aes(x = displ, y = hwy)) +\n  geom_point(color = \"blue\") +\n  labs(title = \"Displacement vs Highway MPG\", x = \"Engine Displacement\", y = \"Highway MPG\") +\n  theme_minimal()\n```\n\n::: {.cell-output-display}\n![](ggplot_files/figure-html/unnamed-chunk-4-1.png){width=672}\n:::\n:::\n\n\n## 4. Faceting\nFaceting creates small multiples based on categorical variables.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(mpg, aes(x = displ, y = hwy)) +\n  geom_point() +\n  facet_wrap(~ class)\n```\n\n::: {.cell-output-display}\n![](ggplot_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n:::\n\n\n\n\n# Conclusion\n`ggplot2` provides an intuitive way to build visualizations layer by layer. Mastering these basics sets a strong foundation for more advanced customizations and analyses.\n",
+    "supporting": [
+      "ggplot_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
