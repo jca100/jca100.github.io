@@ -1,0 +1,41 @@
+---
+title: "Dashing through the snow ❄️"
+author: Jordan Alfano
+format: dashboard
+---
+
+```{r}
+#   include: false 
+library(tidyverse)
+library(gapminder)
+library(tidyverse)
+
+spam = 99
+```
+
+
+
+```{r}
+#| title: GDP and Life Expectancy
+
+library(gapminder)
+library(tidyverse)
+ggplot(gapminder, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point()
+```
+
+```{r}
+#| content: valuebox
+#| title: "Spam per day"
+
+list(
+  icon = "trash",
+  color = "primary",
+  value = spam
+)
+```
+
+

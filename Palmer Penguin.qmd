@@ -1,0 +1,27 @@
+---
+title: "Palmer Penguins"
+author: "Cobblepot Analytics"
+format: 
+  dashboard:
+    logo: img/penguins.png
+    nav-buttons: [github]
+    github: https://github.com/bcdanl/310
+---
+
+#Bills
+
+```{r}
+
+```
+
+#Flippers
+
+```{r}
+
+```
+
+#Data
+
+```{r}
+
+```

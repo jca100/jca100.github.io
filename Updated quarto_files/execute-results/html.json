@@ -1,0 +1,17 @@
+{
+  "hash": "ba1c0aa69a3295bedb900db01f632327",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Dashing through the snow ❄️\"\nformat: dashboard\n---\n\n---\ntitle: My Dashboard\nauthor: Jordan Alfano\nformat: dashboard\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell title='GDP and Life Expectancy'}\n::: {.cell-output-display}\n![](Updated-quarto_files/figure-html/unnamed-chunk-3-1.png){width=768}\n:::\n:::\n\n::: {.cell content='valuebox' title='Spam per day'}\n::: {.cell-output .cell-output-stdout}\n\n```\n$icon\n[1] \"trash\"\n\n$color\n[1] \"primary\"\n\n$value\n[1] 99\n```\n\n\n:::\n:::\n\n\n\\## Row {height=70%}\n\n\\`\\`\\`{r}\n\\`\\`\\`\n\n## Row {height=30%}\n\n\\`\\`\\`{r}\n\\`\\`\\`\n\n\\`\\`\\`{r}\n\\`\\`\\`\n",
+    "supporting": [
+      "Updated-quarto_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

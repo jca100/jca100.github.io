@@ -8,42 +8,52 @@ website:
     pinned: true
     left:
       - text: Project 320
-        href: danl_proj_nba.ipynb
+        href: DANL_320_project_script_(3).ipynb
+
+      - text: Capstone Project
+        href: CapstoneProject410.qmd
+
+      - text: Project 310
+        menu:
+          - text: Write-up
+            href: Project-DANL310.qmd
+          - text: Dashboard
+            href: shiny_dashboard_jordan.qmd
+
       - text: R Basics
         href: danl-310-quarto-r.qmd
+
       - text: Python DANL
-        menu: 
+        menu:
           - text: Python
             href: danl-320-python-basic.ipynb
           - text: Pandas
             href: pandas_basics.ipynb
           - text: Seaborn
             href: seaborn_basics.ipynb
-    
+
       - text: Project NBA
-        menu:  
+        menu:
           - text: danl_proj_nba.ipynb
-          
+
       - text: PySpark
         menu:
-          - text: Explanation of all three 
+          - text: Explanation of all three
             href: PySpark.ipynb
 
       - text: Blog
         href: blog-listing.qmd
-    
-            
-  page-footer: 
+
+  page-footer:
     center: "Powered with GitHub and Quarto<br>© Jordan, 2024"
 
 format:
   html:
-    theme: 
+    theme:
       light: flatly
       dark: darkly
-    mainfont: system-ui; 
+    mainfont: system-ui
     highlight-style: atom-one
     css: styles.css
     toc: false
     include-after-body: target_blank.html
-    

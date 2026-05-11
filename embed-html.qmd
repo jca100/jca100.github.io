@@ -1,0 +1,15 @@
+---
+title: "How to embed external HTML"
+editor: visual
+---
+
+
+
+```{=html}
+<div style="text-align: center; margin: 1em 0;">
+  <iframe
+    src="https://0196a6c0-dde7-ddfb-558e-9312c2caf8ab.share.connect.posit.cloud/"
+    style="width: 800px; height: 800px; border: none;"
+  ></iframe>
+</div>
+```

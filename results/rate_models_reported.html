@@ -1,0 +1,40 @@
+
+<table style="text-align:center"><caption><strong>Rate-Based Models of Drug Arrests and Reported Overdose Deaths in NYC Community Districts, 2013-2021</strong></caption>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="4">log(1 + reported overdose deaths per 100k)</td></tr>
+<tr><td style="text-align:left"></td><td>Pooled OLS</td><td>CD FE</td><td>Year FE</td><td>Two-way FE</td></tr>
+<tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td></tr>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">log(1 + total drug arrests per 100k, t-1)</td><td>-0.131<sup>***</sup></td><td>-0.253<sup>***</sup></td><td>0.204<sup>***</sup></td><td>-0.033</td></tr>
+<tr><td style="text-align:left"></td><td>(0.047)</td><td>(0.031)</td><td>(0.047)</td><td>(0.043)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Median household income (10k)</td><td>-0.107<sup>***</sup></td><td>-0.018</td><td>-0.163<sup>***</sup></td><td>-0.155<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.035)</td><td>(0.026)</td><td>(0.029)</td><td>(0.035)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Poverty rate</td><td>-0.315</td><td>-1.818</td><td>-2.992<sup>***</sup></td><td>-1.092</td></tr>
+<tr><td style="text-align:left"></td><td>(1.141)</td><td>(1.328)</td><td>(0.824)</td><td>(1.186)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Unemployment rate</td><td>-4.391<sup>**</sup></td><td>-5.185<sup>***</sup></td><td>3.310<sup>**</sup></td><td>-0.857</td></tr>
+<tr><td style="text-align:left"></td><td>(1.755)</td><td>(0.994)</td><td>(1.566)</td><td>(1.633)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Black share</td><td>0.477<sup>*</sup></td><td>0.361</td><td>-0.498<sup>***</sup></td><td>-1.378</td></tr>
+<tr><td style="text-align:left"></td><td>(0.259)</td><td>(1.465)</td><td>(0.168)</td><td>(1.234)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Hispanic share</td><td>1.104<sup>**</sup></td><td>1.252</td><td>0.194</td><td>-1.757</td></tr>
+<tr><td style="text-align:left"></td><td>(0.458)</td><td>(1.171)</td><td>(0.263)</td><td>(1.092)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Foreign-born share</td><td>-2.151<sup>***</sup></td><td>2.493</td><td>-2.239<sup>***</sup></td><td>3.394<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.549)</td><td>(1.701)</td><td>(0.335)</td><td>(1.563)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Community district FE</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+<tr><td style="text-align:left">Year FE</td><td>No</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+<tr><td style="text-align:left">Socioeconomic/demographic controls</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td style="text-align:left">Population control</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+<tr><td style="text-align:left">SE clustered by CD</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td style="text-align:left">Observations</td><td>516</td><td>516</td><td>516</td><td>516</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.346</td><td>0.819</td><td>0.676</td><td>0.858</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.337</td><td>0.792</td><td>0.666</td><td>0.835</td></tr>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="4" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+<tr><td style="text-align:left"></td><td colspan="4" style="text-align:right">All models use the same 2013-2021 analytic sample.</td></tr>
+<tr><td style="text-align:left"></td><td colspan="4" style="text-align:right">Both the outcome and treatment are population-standardized, so these rate models do not include log(population) as a separate control.</td></tr>
+<tr><td style="text-align:left"></td><td colspan="4" style="text-align:right">The outcome uses only directly reported overdose counts. Rows with suppressed or blank overdose cells remain missing and are dropped from the reported-outcome regressions.</td></tr>
+<tr><td style="text-align:left"></td><td colspan="4" style="text-align:right">2020 ACS controls are linearly interpolated between 2019 and 2021 because the local ACS file has no 2020 community-district row.</td></tr>
+</table>

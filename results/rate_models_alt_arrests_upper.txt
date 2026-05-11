@@ -1,0 +1,44 @@
+
+Alternative Lagged Drug-Arrest Rate Measures and Upper-Bound Overdose Deaths 2013-2021
+=============================================================================================================================================================================================
+                                                                                         log(1 + upper-bound overdose deaths per 100k)                                                       
+                                          Total               Felony            Misdemeanor           CS low              CS mid            CS high            MJ low            MJ high     
+                                           (1)                  (2)                 (3)                 (4)                (5)                (6)                (7)               (8)       
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lagged arrest-rate measure                -0.037              -0.011              -0.016              -0.057*             -0.039            -0.049*            -0.017             0.002      
+                                         (0.044)              (0.041)             (0.039)             (0.031)            (0.026)            (0.025)            (0.023)           (0.020)     
+                                                                                                                                                                                             
+Median household income (10k)           -0.141***            -0.143***           -0.143***           -0.128***          -0.127***          -0.133***          -0.144***         -0.145***    
+                                         (0.038)              (0.039)             (0.037)             (0.040)            (0.042)            (0.039)            (0.037)           (0.037)     
+                                                                                                                                                                                             
+Poverty rate                              -1.232              -1.295              -1.274              -0.823              -1.077             -1.030            -1.319            -1.298      
+                                         (1.229)              (1.217)             (1.233)             (1.240)            (1.185)            (1.198)            (1.218)           (1.232)     
+                                                                                                                                                                                             
+Unemployment rate                         -0.999              -1.270              -1.103              -1.253              -1.524             -1.488            -1.098            -1.230      
+                                         (1.594)              (1.626)             (1.661)             (1.528)            (1.621)            (1.626)            (1.621)           (1.586)     
+                                                                                                                                                                                             
+Black share                               -1.317              -1.383              -1.367              -0.922              -1.213             -1.088            -1.363            -1.398      
+                                         (1.291)              (1.282)             (1.286)             (1.332)            (1.281)            (1.306)            (1.303)           (1.284)     
+                                                                                                                                                                                             
+Hispanic share                            -1.294              -1.344              -1.369              -0.734              -1.110             -1.090            -1.339            -1.380      
+                                         (1.107)              (1.104)             (1.090)             (1.153)            (1.108)            (1.104)            (1.104)           (1.090)     
+                                                                                                                                                                                             
+Foreign-born share                        2.144                2.140               2.201               1.611              1.829              1.906              2.244             2.201      
+                                         (1.461)              (1.445)             (1.451)             (1.448)            (1.448)            (1.454)            (1.426)           (1.445)     
+                                                                                                                                                                                             
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Model                                   Two-way FE          Two-way FE          Two-way FE          Two-way FE          Two-way FE         Two-way FE        Two-way FE        Two-way FE    
+Community district FE                      Yes                  Yes                 Yes                 Yes                Yes                Yes                Yes               Yes       
+Year FE                                    Yes                  Yes                 Yes                 Yes                Yes                Yes                Yes               Yes       
+Socioeconomic/demographic controls         Yes                  Yes                 Yes                 Yes                Yes                Yes                Yes               Yes       
+Population control                          No                  No                  No                  No                  No                 No                No                No        
+SE clustered by CD                         Yes                  Yes                 Yes                 Yes                Yes                Yes                Yes               Yes       
+Observations                               531                  531                 531                 531                531                531                531               531       
+R2                                        0.866                0.865               0.865               0.867              0.866              0.867              0.865             0.865      
+Adjusted R2                               0.844                0.844               0.844               0.845              0.845              0.845              0.844             0.844      
+=============================================================================================================================================================================================
+Note:                                                                                                                                                             *p<0.1; **p<0.05; ***p<0.01
+                                                                                                       Each column is a separate two-way fixed-effects model using the same 2013-2021 sample.
+                                           The outcome uses upper-bound coding for suppressed overdose cells, meaning suppressed cells are coded as 4 before conversion to per-100,000 rates.
+                                                                                                                                                   CS = controlled substance. MJ = marijuana.
+                                          These measures are correlated with each other, so they should be compared across separate columns rather than interpreted jointly within one model.

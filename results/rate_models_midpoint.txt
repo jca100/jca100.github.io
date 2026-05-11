@@ -1,0 +1,43 @@
+
+Rate-Based Models of Drug Arrests and Midpoint-Coded Overdose Deaths in NYC Community Districts, 2013-2021
+============================================================================================================================================================================================
+                                                                                           log(1 + midpoint-coded overdose deaths per 100k)                                                 
+                                                        Pooled OLS                              CD FE                               Year FE                           Two-way FE            
+                                                           (1)                                   (2)                                  (3)                                (4)                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+log(1 + total drug arrests per 100k, t-1)               -0.155***                             -0.245***                            0.208***                             -0.038              
+                                                         (0.054)                               (0.032)                              (0.055)                            (0.049)              
+                                                                                                                                                                                            
+Median household income (10k)                           -0.145***                              -0.0004                             -0.198***                          -0.130***             
+                                                         (0.046)                               (0.030)                              (0.033)                            (0.043)              
+                                                                                                                                                                                            
+Poverty rate                                              -0.843                                -1.397                             -3.643***                            -1.367              
+                                                         (1.330)                               (1.516)                              (0.915)                            (1.411)              
+                                                                                                                                                                                            
+Unemployment rate                                        -4.725**                             -6.244***                             4.102**                             -1.185              
+                                                         (1.920)                               (1.082)                              (1.781)                            (1.734)              
+                                                                                                                                                                                            
+Black share                                               0.483*                                0.377                              -0.612***                            -1.281              
+                                                         (0.283)                               (1.602)                              (0.167)                            (1.450)              
+                                                                                                                                                                                            
+Hispanic share                                           1.143**                                2.109*                               0.127                              -0.836              
+                                                         (0.535)                               (1.185)                              (0.288)                            (1.244)              
+                                                                                                                                                                                            
+Foreign-born share                                      -2.510***                               0.185                              -2.506***                            1.178               
+                                                         (0.614)                               (1.957)                              (0.356)                            (1.720)              
+                                                                                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Community district FE                                       No                                   Yes                                  No                                 Yes                
+Year FE                                                     No                                    No                                  Yes                                Yes                
+Socioeconomic/demographic controls                         Yes                                   Yes                                  Yes                                Yes                
+Population control                                          No                                    No                                  No                                  No                
+SE clustered by CD                                         Yes                                   Yes                                  Yes                                Yes                
+Observations                                               531                                   531                                  531                                531                
+R2                                                        0.358                                 0.817                                0.681                              0.851               
+Adjusted R2                                               0.349                                 0.791                                0.671                              0.827               
+============================================================================================================================================================================================
+Note:                                                                                                                                                            *p<0.1; **p<0.05; ***p<0.01
+                                                                                                                                          All models use the same 2013-2021 analytic sample.
+                                                      Both the outcome and treatment are population-standardized, so these rate models do not include log(population) as a separate control.
+                                             The outcome uses midpoint coding for suppressed overdose cells, meaning suppressed cells are coded as 2 before conversion to per-100,000 rates.
+                                                            2020 ACS controls are linearly interpolated between 2019 and 2021 because the local ACS file has no 2020 community-district row.
