@@ -1,7 +1,32 @@
 ---
-title: "Jordan Alfano Capstone Project"
-format: html
-editor: visual
+title: Drug Arrests and Overdose Deaths in NYC
+subtitle: "Evidence from NYC Data"
+author:
+  - name: Jordan Alfano 
+    affiliation: SUNY Geneseo
+    
+  - name: Jake Starkey
+    affiliation: SUNY Geneseo
+    
+date: last-modified
+
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+
+format:
+  html:
+    code-fold: true
+    toc: true
+    toc-title: "Contents"
+    toc-expand: 3
+    number-sections: true
+    code-tools: true
+    highlight-style: atom-one
 ---
 
 1. Introduction 
