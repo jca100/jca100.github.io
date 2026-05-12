@@ -106,24 +106,7 @@ model_data %>%
     pct_foreign_born
   ) 
 ```
-# A tibble: 531 × 8
-   overdose_deaths_midpoi…¹ arrests_total_per_10…² median_hhinc_10k poverty_rate
-                      <dbl>                  <dbl>            <dbl>        <dbl>
- 1                     1.34                   58.0             11.3       0.0805
- 2                     3.29                   70.5             11.8       0.0796
- 3                     3.26                   71.0             12.0       0.0742
- 4                     3.86                   74.4             12.4       0.0755
- 5                     1.27                  172.              13.3       0.0779
- 6                     1.29                  127.              14.0       0.0730
- 7                     1.28                   54.3             14.8       0.0696
- 8                     1.27                   43.0             15.4       0.0688
- 9                     5.67                   15.9             16.1       0.0680
-10                     6.04                  406.              11.3       0.0805
-# ℹ 521 more rows
-# ℹ abbreviated names: ¹​overdose_deaths_midpoint_per_100k,
-#   ²​arrests_total_per_100k_lag1
-# ℹ 4 more variables: unemp_rate <dbl>, pct_black <dbl>, pct_hispanic <dbl>,
-#   pct_foreign_born <dbl>
+
 
 ```{r}
 model_data %>%
