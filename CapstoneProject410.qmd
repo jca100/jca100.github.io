@@ -29,696 +29,323 @@ format:
     highlight-style: atom-one
 ---
 
-1. Introduction 
-Purpose of section
+1 Introduction
 New York City has experienced a sharp rise in overdose deaths over the past decade, reflecting the broader opioid and fentanyl epidemic occurring across the United States. The crisis intensified during and after the COVID-19 pandemic as overdose deaths reached record highs across many urban communities. In response, policymakers, public health officials, and law enforcement agencies have continued to debate the effectiveness of different strategies aimed at reducing overdose deaths, particularly the role of drug-related arrests and enforcement activity.
-At first glance, the relationship between drug arrests and overdose deaths appears relatively straightforward. Areas with higher levels of drug enforcement often show lower overdose death rates in simple regression models, suggesting that arrests may reduce overdose activity. However, this relationship is difficult to interpret causally because law enforcement resources are often concentrated in neighborhoods already experiencing severe drug activity. As a result, arrests may respond to overdose risk rather than directly reducing overdose deaths. This creates a reverse causality problem that complicates simple regression analysis.
-This study examines the relationship between drug arrests and overdose death rates across New York City community districts using fixed effects regression analysis and neighborhood-level overdose data. The analysis combines overdose death data from the New York City Department of Health and Mental Hygiene (DOHMH), drug arrest data from the New York Police Department (NYPD), and demographic and socioeconomic data from the American Community Survey (ACS) between 2013 and 2021.
-The paper also expands beyond the regression analysis by examining more recent geographic overdose patterns throughout New York City using 2023 and 2024 DOHMH neighborhood overdose data. While the regression analysis focuses on long-run relationships between arrests and overdose deaths, the later descriptive analysis is used to examine whether overdose activity remains geographically concentrated within persistent hotspot regions. Together, these approaches help evaluate whether overdose deaths are more closely associated with enforcement levels or broader neighborhood conditions.
-Data preview
-To examine this relationship more closely, this project uses panel data from New York City community districts between 2013 and 2021, combining overdose death data from the New York City Department of Health and Mental Hygiene, drug arrest data from the NYPD, and socioeconomic controls from the American Community Survey. Because some overdose counts were suppressed in the public health data, the analysis incorporates lower-bound, midpoint, and upper-bound overdose estimates to test the sensitivity of the results under different assumptions. The study uses fixed effects regression models to account for persistent neighborhood differences and broader citywide changes over time. The findings suggest that while simple regression models show a statistically significant relationship between arrests and overdose deaths, that relationship weakens substantially after accounting for neighborhood and time fixed effects. The results also suggest that overdose patterns and enforcement activity are not consistent across neighborhoods, indicating that broader local conditions and targeted public health interventions may play a larger role in explaining overdose risk 
 
-2. Background & Related Literature 
+At first glance, the relationship between drug arrests and overdose deaths appears relatively straightforward. Areas with higher levels of drug enforcement often show lower overdose death rates in simple regression models, suggesting that arrests may reduce overdose activity. However, this relationship is difficult to interpret causally because law enforcement resources are often concentrated in neighborhoods already experiencing severe drug activity. As a result, arrests may respond to overdose risk rather than directly reducing overdose deaths. This creates a reverse causality problem that complicates simple regression analysis.
+
+This study examines the relationship between drug arrests and overdose death rates across New York City community districts using fixed effects regression analysis and neighborhood-level overdose data. The analysis combines overdose death data from the New York City Department of Health and Mental Hygiene (DOHMH), drug arrest data from the New York Police Department (NYPD), and demographic and socioeconomic data from the American Community Survey (ACS) between 2013 and 2021.
+
+The paper also expands beyond the regression analysis by examining more recent geographic overdose patterns throughout New York City using 2023 and 2024 DOHMH neighborhood overdose data. While the regression analysis focuses on long-run relationships between arrests and overdose deaths, the later descriptive analysis is used to examine whether overdose activity remains geographically concentrated within persistent hotspot regions. Together, these approaches help evaluate whether overdose deaths are more closely associated with enforcement levels or broader neighborhood conditions.
+
+To examine this relationship more closely, this project uses panel data from New York City community districts between 2013 and 2021, combining overdose death data from the New York City Department of Health and Mental Hygiene, drug arrest data from the NYPD, and socioeconomic controls from the American Community Survey. Because some overdose counts were suppressed in the public health data, the analysis incorporates lower-bound, midpoint, and upper-bound overdose estimates to test the sensitivity of the results under different assumptions. The study uses fixed effects regression models to account for persistent neighborhood differences and broader citywide changes over time.
+
+2 Background and Related Literature
 The rise in overdose deaths across New York City has largely been driven by the increasing presence of fentanyl and other synthetic opioids within the drug supply. According to the New York City Department of Health and Mental Hygiene (2025), overdose deaths increased sharply beginning in the mid-2010s and accelerated further during the COVID-19 pandemic. Fentanyl became involved in overdose deaths throughout this period, contributing to record high mortality rates across many urban communities. The Department of Health and Mental Hygiene (2025) also notes that overdose deaths have disproportionately impacted neighborhoods facing higher levels of poverty, substance use, and limited access to healthcare resources. Recent research on overdose intervention strategies has also shifted attention toward more targeted public health approaches rather than traditional enforcement focused responses, particularly in neighborhoods experiencing persistent overdose hotspots.
-Research on policing and drug enforcement has produced mixed conclusions regarding its effectiveness in reducing overdose deaths and drug activity. Supporters of enforcement based approaches argue that increased policing and drug arrests deter drug distribution and reduce the availability of dangerous substances in high-risk communities. These strategies are often connected to deterrence theory and “broken windows” style policing, which emphasize aggressive enforcement in areas experiencing high levels of crime and disorder. However, critics argue that arrest focused strategies fail to address the underlying causes of substance abuse, including poverty, homelessness, mental health conditions, and limited access to treatment. As a result, many researchers and policymakers have shifted toward public health approaches focused on treatment access, harm reduction, and targeted intervention programs.
-Recent research has increasingly focused on prevention based and public health approaches to reducing overdose deaths rather than relying primarily on enforcement strategies. Many of these approaches emphasize early intervention, treatment access, harm reduction services, and targeted outreach within high-risk communities. Programs centered around overdose prevention and coordinated care have shown promising results in reducing both fatal and non-fatal overdoses, particularly in neighborhoods experiencing persistent overdose activity. This shift toward targeted intervention strategies reflects a broader understanding that overdose risk is often shaped by local social and economic conditions rather than policing levels alone. As a result, many policymakers have begun exploring more localized approaches aimed at identifying and assisting high-risk individuals before overdoses occur.
+
+Research on policing and drug enforcement has produced mixed conclusions regarding its effectiveness in reducing overdose deaths and drug activity. Supporters of enforcement based approaches argue that increased policing and drug arrests deter drug distribution and reduce the availability of dangerous substances in high-risk communities. These strategies are often connected to deterrence theory and “broken windows” style policing, which emphasize aggressive enforcement in areas experiencing high levels of crime and disorder. However, critics argue that arrest focused strategies fail to address underlying drivers of substance abuse, including poverty, homelessness, mental health conditions, and limited access to treatment.
+
+In response to these limitations, recent research has increasingly focused on prevention based and public health approaches to reducing overdose deaths. Many of these strategies emphasize early intervention, treatment access, harm reduction services, and targeted outreach within high-risk communities. Programs centered around overdose prevention and coordinated care have shown promising results in reducing both fatal and non-fatal overdoses, particularly in neighborhoods experiencing persistent overdose activity. This shift toward targeted intervention strategies reflects a broader understanding that overdose risk is often shaped by local social and economic conditions rather than policing levels alone.
+
 Given these competing explanations, this project uses regression analysis to examine the relationship between drug arrests and overdose deaths across New York City. The analysis begins with simple models before incorporating fixed effects and socioeconomic controls to account for broader neighborhood and citywide influences. To address suppressed overdose counts within the public health data, the study also tests multiple overdose assumptions to evaluate the consistency of the results across different specifications.
 
-3. Data
+3 Data
 This study combines overdose death data from the New York City Department of Health and Mental Hygiene, drug arrest data from the NYPD, and demographic and socioeconomic data from the American Community Survey between 2013 and 2021. The analysis focuses on overdose death rates and drug arrest rates across New York City neighborhoods while also incorporating controls for factors such as income, poverty, and unemployment. These variables were selected to account for broader economic and social conditions that may influence overdose risk and enforcement activity throughout the city.
+
 Because some overdose counts were suppressed within the public health data to protect privacy in areas with low death counts, the analysis required additional assumptions when constructing overdose rate measures. To address this issue, the study estimates lower-bound, midpoint, and upper-bound overdose values for suppressed observations. This approach allows the analysis to test the sensitivity of the regression results under different assumptions regarding the missing data.
 
-
 ```{r}
+#| label: setup
+#| include: false
+
 library(tidyverse)
-library(sf)
-library(tigris)
-library(readxl)
-library(janitor)
-library(lubridate)
-library(stringr)
-
-options(tigris_use_cache = TRUE)
-
+library(readr)
+library(modelsummary)
+library(kableExtra)
+library(knitr)
 ```
 
-Set Files Path
 
 ```{r}
-arrest_path <- "C:/Users/jcas2/Downloads/NYPD_Arrests_Data_(Historic)_-_Dangerous_Drugs_20260331.csv"
+model_data <- read_csv("C:/Users/jcas2/Downloads/jca100.github.io/model_data_rate_cd_2013_2021.csv")
+```
+Outcome variables:
 
-acs1_path <- "C:/Users/jcas2/Downloads/jca100.github.io/acs1-data.csv"
+overdose_deaths_reported_per_100k
+overdose_deaths_lower_per_100k
+overdose_deaths_midpoint_per_100k
+overdose_deaths_upper_per_100k
+Main explanatory variable:
 
-acs5_path <- "C:/Users/jcas2/Downloads/jca100.github.io/acs5-data.csv"
+arrests_total_per_100k_lag1
+Control variables:
 
-od_file <- "C:/Users/jcas2/Downloads/jca100.github.io/arrests_cd_overdose_clean_2006_2021 (1).csv"
+median_hhinc_10k
+poverty_rate
+unemp_rate
+pct_black
+pct_hispanic
+pct_foreign_born
 
-drug_path <- "C:/Users/jcas2/Downloads/jca100.github.io/nyc_cd_drug_related_2022_2023.csv"
+```{r}
+library(modelsummary)
+library(kableExtra)
 ```
 
-# 2. READ DATA
 
 ```{r}
-arrests <- read_csv(arrest_path, show_col_types = FALSE) |>
-  mutate(
-    ARREST_DATE = mdy(ARREST_DATE),
-    arrest_year = year(ARREST_DATE)
-  ) |>
-  filter(!is.na(Longitude), !is.na(Latitude))
-
-acs1 <- read_csv(acs1_path, show_col_types = FALSE) |>
-  mutate(source = "acs1")
-
-acs5 <- read_csv(acs5_path, show_col_types = FALSE) |>
-  mutate(source = "acs5")
-
-overdose_cd <- read_csv(od_file, show_col_types = FALSE)
-
-drug_pop <- read_csv(drug_path, show_col_types = FALSE)
+model_data %>%
+  select(
+    overdose_deaths_midpoint_per_100k,
+    arrests_total_per_100k_lag1,
+    median_hhinc_10k,
+    poverty_rate,
+    unemp_rate,
+    pct_black,
+    pct_hispanic,
+    pct_foreign_born
+  ) 
 ```
-
-# 3. BUILD SPATIAL ARRESTS DATA
+# A tibble: 531 × 8
+   overdose_deaths_midpoi…¹ arrests_total_per_10…² median_hhinc_10k poverty_rate
+                      <dbl>                  <dbl>            <dbl>        <dbl>
+ 1                     1.34                   58.0             11.3       0.0805
+ 2                     3.29                   70.5             11.8       0.0796
+ 3                     3.26                   71.0             12.0       0.0742
+ 4                     3.86                   74.4             12.4       0.0755
+ 5                     1.27                  172.              13.3       0.0779
+ 6                     1.29                  127.              14.0       0.0730
+ 7                     1.28                   54.3             14.8       0.0696
+ 8                     1.27                   43.0             15.4       0.0688
+ 9                     5.67                   15.9             16.1       0.0680
+10                     6.04                  406.              11.3       0.0805
+# ℹ 521 more rows
+# ℹ abbreviated names: ¹​overdose_deaths_midpoint_per_100k,
+#   ²​arrests_total_per_100k_lag1
+# ℹ 4 more variables: unemp_rate <dbl>, pct_black <dbl>, pct_hispanic <dbl>,
+#   pct_foreign_born <dbl>
 
 ```{r}
-arrests_sf <- arrests |>
-  st_as_sf(
-    coords = c("Longitude", "Latitude"),
-    crs = 4326,
-    remove = FALSE
-  )
-
+model_data %>%
+  select(
+    `Overdose deaths per 100k` = overdose_deaths_midpoint_per_100k,
+    `Drug arrests per 100k, lagged` = arrests_total_per_100k_lag1,
+    `Median household income ($10k)` = median_hhinc_10k,
+    `Poverty rate` = poverty_rate,
+    `Unemployment rate` = unemp_rate,
+    `% Black` = pct_black,
+    `% Hispanic` = pct_hispanic,
+    `% Foreign born` = pct_foreign_born
+  ) %>%
+  datasummary_skim(
+    output = "kableExtra",
+    fmt = 2
+  ) %>%
+  kable_styling(full_width = FALSE)
 ```
+4 Empirical Strategy
+To better examine the relationship between drug arrests and overdose deaths, this study estimates a series of fixed effects regression models using New York City overdose and arrest data between 2013 and 2021. The primary analysis focuses on models using lower-bound, midpoint, and upper-bound overdose assumptions to account for suppressed overdose counts within the public health data. Additional socioeconomic controls are included to account for differences in poverty, income, and unemployment across neighborhoods. While several alternative model specifications were also tested throughout the analysis, the fixed effects framework provided the primary basis for evaluating the relationship between arrests and overdose death rates.
 
-# 4. GEOGRAPHIES
 
-```{r}
-puma_sf_nyc <- tigris::pumas(state = "NY", year = 2020, cb = TRUE) |>
-  st_transform(4326) |>
-  rename(
-    GEOID  = GEOID20,
-    PUMACE = PUMACE20,
-    NAME   = NAMELSAD20
-  ) |>
-  filter(str_detect(NAME, "Bronx|Brooklyn|Manhattan|Queens|Staten Island")) |>
-  select(GEOID, PUMACE, NAME, geometry)
+Where:
 
-cd_sf <- st_read(
-  "https://data.cityofnewyork.us/resource/5crt-au7u.geojson?$limit=1000",
-  quiet = TRUE
-) |>
-  st_transform(4326) |>
-  mutate(
-    boro_cd = as.integer(boro_cd),
-    boro_name = case_when(
-      boro_cd %/% 100 == 1 ~ "Manhattan",
-      boro_cd %/% 100 == 2 ~ "Bronx",
-      boro_cd %/% 100 == 3 ~ "Brooklyn",
-      boro_cd %/% 100 == 4 ~ "Queens",
-      boro_cd %/% 100 == 5 ~ "Staten Island",
-      TRUE ~ NA_character_
-    )
-  ) |>
-  select(boro_cd, boro_name, geometry)
-
-```
-
-# 5. SPATIAL JOINS
+(OverdoseRate_{it}) is overdose deaths per 100,000 residents
+(ArrestRate_{i,t-1}) is lagged drug arrests per 100,000 residents
+(X_{it}) includes socioeconomic and demographic controls
+(_i) captures community district fixed effects
+(_t) captures year fixed effects
+The inclusion of neighborhood fixed effects helps account for characteristics that remain relatively constant within neighborhoods over time. For example, long-term economic conditions, population density, and historical differences in drug activity. Year fixed effects are also included to account for other citywide shocks and trends, including changes in the fentanyl supply and the effects of the COVID-19 pandemic. Together, these controls help isolate the relationship between drug arrests and overdose deaths beyond broader structural differences across New York City.
 
 ```{r}
-
-arrests_geo <- arrests_sf |>
-  st_join(puma_sf_nyc, join = st_within, left = TRUE) |>
-  st_join(cd_sf, join = st_within, left = TRUE)
-```
-
-# 6. CLEAN VARIABLES
-
-```{r}
-arrests_geo <- arrests_geo |>
-  mutate(
-    drug_category = case_when(
-      PD_DESC == "CONTROLLED SUBSTANCE, POSSESSION 7" ~ "Controlled substance possession: 7th degree",
-      PD_DESC == "CONTROLLED SUBSTANCE, POSSESSION 5" ~ "Controlled substance possession: 5th degree",
-      PD_DESC == "CONTROLLED SUBSTANCE, POSSESSION 4" ~ "Controlled substance possession: 4th degree",
-      PD_DESC == "CONTROLLED SUBSTANCE,POSSESS. 3" ~ "Controlled substance possession: 3rd degree",
-      PD_DESC == "CONTROLLED SUBSTANCE,POSSESS. 2" ~ "Controlled substance possession: 2nd degree",
-      PD_DESC == "CONTROLLED SUBSTANCE,POSSESS. 1" ~ "Controlled substance possession: 1st degree",
-      PD_DESC %in% c(
-        "CONTROLLED SUBSTANCE, POSSESSI",
-        "CONTROLLED SUBSTANCE,POSSESS."
-      ) ~ "Controlled substance possession: unspecified degree",
-      PD_DESC == "DRUG, INJECTION OF" ~ "Drug injection offense",
-      PD_DESC == "MARIJUANA, POSSESSION 4 & 5" ~ "Marijuana possession: lower degree",
-      PD_DESC == "MARIJUANA, POSSESSION 1, 2 & 3" ~ "Marijuana possession: higher degree",
-      PD_DESC == "USE CHILD TO COMMIT CONT SUB OFF" ~ "Aggravated drug offense involving child",
-      TRUE ~ "Other or unknown drug offense"
-    ),
-    drug_category_broad = case_when(
-      PD_DESC == "CONTROLLED SUBSTANCE, POSSESSION 7" ~ "controlled_substance_possession_low",
-      PD_DESC %in% c(
-        "CONTROLLED SUBSTANCE, POSSESSION 5",
-        "CONTROLLED SUBSTANCE, POSSESSION 4"
-      ) ~ "controlled_substance_possession_mid",
-      PD_DESC %in% c(
-        "CONTROLLED SUBSTANCE,POSSESS. 3",
-        "CONTROLLED SUBSTANCE,POSSESS. 2",
-        "CONTROLLED SUBSTANCE,POSSESS. 1"
-      ) ~ "controlled_substance_possession_high",
-      PD_DESC == "MARIJUANA, POSSESSION 4 & 5" ~ "marijuana_possession_low",
-      PD_DESC == "MARIJUANA, POSSESSION 1, 2 & 3" ~ "marijuana_possession_high",
-      PD_DESC %in% c(
-        "DRUG, INJECTION OF",
-        "USE CHILD TO COMMIT CONT SUB OFF",
-        "CONTROLLED SUBSTANCE, POSSESSI",
-        "CONTROLLED SUBSTANCE,POSSESS."
-      ) ~ "other_drug_offense",
-      TRUE ~ "other_or_unknown_drug_offense"
-    ),
-    law_cat_label = case_when(
-      LAW_CAT_CD == "F" ~ "Felony",
-      LAW_CAT_CD == "M" ~ "Misdemeanor",
-      LAW_CAT_CD == "V" ~ "Violation",
-      TRUE ~ "Other / missing"
-    ),
-    age_group_clean = case_when(
-      AGE_GROUP %in% c("<18", "18-24", "25-44", "45-64", "65+") ~ AGE_GROUP,
-      AGE_GROUP == "UNKNOWN" ~ "Unknown",
-      TRUE ~ NA_character_
-    ),
-    perp_race_acs = case_when(
-      PERP_RACE == "WHITE" ~ "white",
-      PERP_RACE == "BLACK" ~ "black",
-      PERP_RACE == "ASIAN / PACIFIC ISLANDER" ~ "asian",
-      PERP_RACE %in% c("WHITE HISPANIC", "BLACK HISPANIC") ~ "hispanic",
-      PERP_RACE %in% c("AMERICAN INDIAN/ALASKAN NATIVE", "OTHER", "UNKNOWN") ~ "other_or_unknown",
-      TRUE ~ NA_character_
-    ),
-    perp_sex_label = case_when(
-      PERP_SEX == "F" ~ "Female",
-      PERP_SEX == "M" ~ "Male",
-      PERP_SEX == "U" ~ "Unknown",
-      TRUE ~ "Other / missing"
-    )
-  )
-
-```
-
-# 7. ACS PANEL AT PUMA-YEAR LEVEL
-
-```{r}
-acs_all <- bind_rows(
-  acs1 |> filter(year <= 2008),
-  acs5 |> filter(year >= 2009)
-) |>
-  mutate(
-    GEOID = as.character(GEOID),
-    year = as.integer(year)
-  )
-
-arrests_puma_agg <- arrests_geo |>
-  st_drop_geometry() |>
-  filter(!is.na(GEOID), !is.na(arrest_year)) |>
-  group_by(GEOID, NAME, arrest_year) |>
-  summarize(
-    arrests_total = n(),
-    arrests_felony = sum(law_cat_label == "Felony", na.rm = TRUE),
-    arrests_misdemeanor = sum(law_cat_label == "Misdemeanor", na.rm = TRUE),
-    cs_possession_low = sum(drug_category_broad == "controlled_substance_possession_low", na.rm = TRUE),
-    cs_possession_mid = sum(drug_category_broad == "controlled_substance_possession_mid", na.rm = TRUE),
-    cs_possession_high = sum(drug_category_broad == "controlled_substance_possession_high", na.rm = TRUE),
-    mj_possession_low = sum(drug_category_broad == "marijuana_possession_low", na.rm = TRUE),
-    mj_possession_high = sum(drug_category_broad == "marijuana_possession_high", na.rm = TRUE),
-    other_drug_offense = sum(drug_category_broad == "other_drug_offense", na.rm = TRUE),
-    arrests_female = sum(perp_sex_label == "Female", na.rm = TRUE),
-    arrests_male = sum(perp_sex_label == "Male", na.rm = TRUE),
-    arrests_under18 = sum(age_group_clean == "<18", na.rm = TRUE),
-    arrests_18_24 = sum(age_group_clean == "18-24", na.rm = TRUE),
-    arrests_25_44 = sum(age_group_clean == "25-44", na.rm = TRUE),
-    arrests_45_64 = sum(age_group_clean == "45-64", na.rm = TRUE),
-    arrests_65plus = sum(age_group_clean == "65+", na.rm = TRUE),
-    arrests_white = sum(perp_race_acs == "white", na.rm = TRUE),
-    arrests_black = sum(perp_race_acs == "black", na.rm = TRUE),
-    arrests_asian = sum(perp_race_acs == "asian", na.rm = TRUE),
-    arrests_hispanic = sum(perp_race_acs == "hispanic", na.rm = TRUE),
-    .groups = "drop"
-  )
-
-arrests_acs <- arrests_puma_agg |>
-  left_join(
-    acs_all,
-    by = c("GEOID", "arrest_year" = "year")
-  )
-```
-
-# 8. COMMUNITY DISTRICT-YEAR PANEL
-
-```{r}
-arrests_cd_agg <- arrests_geo |>
-  st_drop_geometry() |>
-  filter(!is.na(boro_cd), !is.na(arrest_year)) |>
-  group_by(boro_cd, boro_name, arrest_year) |>
-  summarize(
-    arrests_total = n(),
-    arrests_felony = sum(law_cat_label == "Felony", na.rm = TRUE),
-    arrests_misdemeanor = sum(law_cat_label == "Misdemeanor", na.rm = TRUE),
-    cs_possession_low = sum(drug_category_broad == "controlled_substance_possession_low", na.rm = TRUE),
-    cs_possession_mid = sum(drug_category_broad == "controlled_substance_possession_mid", na.rm = TRUE),
-    cs_possession_high = sum(drug_category_broad == "controlled_substance_possession_high", na.rm = TRUE),
-    mj_possession_low = sum(drug_category_broad == "marijuana_possession_low", na.rm = TRUE),
-    mj_possession_high = sum(drug_category_broad == "marijuana_possession_high", na.rm = TRUE),
-    other_drug_offense = sum(drug_category_broad == "other_drug_offense", na.rm = TRUE),
-    arrests_female = sum(perp_sex_label == "Female", na.rm = TRUE),
-    arrests_male = sum(perp_sex_label == "Male", na.rm = TRUE),
-    arrests_under18 = sum(age_group_clean == "<18", na.rm = TRUE),
-    arrests_18_24 = sum(age_group_clean == "18-24", na.rm = TRUE),
-    arrests_25_44 = sum(age_group_clean == "25-44", na.rm = TRUE),
-    arrests_45_64 = sum(age_group_clean == "45-64", na.rm = TRUE),
-    arrests_65plus = sum(age_group_clean == "65+", na.rm = TRUE),
-    arrests_white = sum(perp_race_acs == "white", na.rm = TRUE),
-    arrests_black = sum(perp_race_acs == "black", na.rm = TRUE),
-    arrests_asian = sum(perp_race_acs == "asian", na.rm = TRUE),
-    arrests_hispanic = sum(perp_race_acs == "hispanic", na.rm = TRUE),
-    .groups = "drop"
-  )
-
-overdose_cd_one <- overdose_cd |>
-  mutate(
-    boro_cd = as.integer(boro_cd),
-    arrest_year = as.integer(arrest_year)
-  ) |>
-  group_by(boro_cd, arrest_year) |>
-  summarize(
-    overdose_total = sum(
-      deaths_due_to_use_of_or_poisoning_by_psychoactive_substance_excluding_alcohol_and_tobacco,
-      na.rm = TRUE
-    ),
-    .groups = "drop"
-  )
-
-arrests_cd_overdose <- arrests_cd_agg |>
-  left_join(overdose_cd_one, by = c("boro_cd", "arrest_year"))
-```
-
-# 9. LOOKUP TABLE FOR COMMUNITY DISTRICT NAMES
-
-```{r}
-cd_lookup <- tribble(
-  ~boro_cd, ~cd_name,
-  101, "Battery Park / Tribeca",
-  102, "Greenwich Village / SoHo",
-  103, "Lower East Side / Chinatown",
-  104, "Chelsea / Clinton",
-  105, "Midtown Business District",
-  106, "Murray Hill / Stuyvesant Town",
-  107, "Upper West Side",
-  108, "Upper East Side",
-  109, "Manhattanville / West Harlem",
-  110, "Central Harlem",
-  111, "East Harlem",
-  112, "Washington Heights / Inwood",
-  201, "Mott Haven / Melrose",
-  202, "Hunts Point / Longwood",
-  203, "Morrisania / Crotona",
-  204, "Concourse / Highbridge",
-  205, "Fordham / University Heights",
-  206, "Belmont / East Tremont",
-  207, "Kingsbridge Heights / Bedford",
-  208, "Riverdale / Fieldston",
-  209, "Parkchester / Soundview",
-  210, "Throgs Neck / Co-op City",
-  211, "Morris Park / Bronxdale",
-  212, "Williamsbridge / Baychester",
-  301, "Greenpoint / Williamsburg",
-  302, "Fort Greene / Brooklyn Heights",
-  303, "Bedford-Stuyvesant",
-  304, "Bushwick",
-  305, "East New York / Starrett City",
-  306, "Park Slope / Carroll Gardens",
-  307, "Sunset Park",
-  308, "Crown Heights North / Prospect Heights",
-  309, "Crown Heights South / Lefferts Gardens",
-  310, "Bay Ridge / Dyker Heights",
-  311, "Bensonhurst",
-  312, "Borough Park",
-  313, "Coney Island",
-  314, "Flatbush / Midwood",
-  315, "Sheepshead Bay",
-  316, "Brownsville",
-  317, "East Flatbush",
-  318, "Flatlands / Canarsie",
-  401, "Long Island City / Astoria",
-  402, "Woodside / Sunnyside",
-  403, "Jackson Heights",
-  404, "Elmhurst / Corona",
-  405, "Ridgewood / Maspeth",
-  406, "Rego Park / Forest Hills",
-  407, "Flushing",
-  408, "Hillcrest / Fresh Meadows",
-  409, "Kew Gardens / Woodhaven",
-  410, "South Ozone Park / Howard Beach",
-  411, "Bayside / Little Neck",
-  412, "Jamaica / Hollis",
-  413, "Queens Village",
-  414, "Rockaway / Broad Channel",
-  501, "St. George / Stapleton",
-  502, "South Beach / Willowbrook",
-  503, "Tottenville / Great Kills"
+model_midpoint <- lm(
+  log1p_overdose_deaths_midpoint_per_100k ~ 
+    log1p_arrests_total_per_100k_lag1 +
+    median_hhinc_10k + poverty_rate + unemp_rate +
+    pct_black + pct_hispanic + pct_foreign_born +
+    factor(boro_cd) + factor(year),
+  data = model_data
 )
 
-arrests_cd_overdose <- arrests_cd_overdose |>
-  left_join(cd_lookup, by = "boro_cd") |>
-  relocate(cd_name, .after = boro_cd)
-
-```
-
-# 10. MAP DATA
-
-```{r}
-cd_map <- cd_sf |>
-  left_join(arrests_cd_overdose, by = "boro_cd")
-
-cd_map_2021 <- cd_map |>
-  filter(arrest_year == 2021)
-
-```
-
-# 11. SAVE CLEAN FILES
-
-```{r}
-write_csv(arrests_acs, "arrests_puma_acs_clean.csv")
-
-arrests_cd_overdose_2006_2021 <- arrests_cd_overdose |>
-  filter(arrest_year <= 2021)
-
-write_csv(
-  arrests_cd_overdose_2006_2021,
-  "arrests_cd_overdose_clean_2006_2021.csv"
+modelsummary(
+  list("Two-Way FE Model" = model_midpoint),
+  coef_omit = "factor\\(",
+  coef_map = c(
+    "log1p_arrests_total_per_100k_lag1" = "Lagged drug arrests per 100k (log)",
+    "median_hhinc_10k" = "Median household income ($10k)",
+    "poverty_rate" = "Poverty rate",
+    "unemp_rate" = "Unemployment rate",
+    "pct_black" = "% Black",
+    "pct_hispanic" = "% Hispanic",
+    "pct_foreign_born" = "% Foreign born"
+  ),
+  stars = TRUE,
+  vcov = ~ boro_cd,
+  gof_omit = "IC|Log|RMSE|F",
+  notes = "Community district and year fixed effects included. Standard errors clustered by community district."
 )
 ```
 
-# 12. VISUALIZATIONS
-
-# Overdose deaths in NYC over time
-
-```{r}
-city_year <- arrests_cd_overdose |>
-  group_by(arrest_year) |>
-  summarize(
-    overdose_total = sum(overdose_total, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-ggplot(city_year, aes(x = arrest_year, y = overdose_total)) +
-  geom_line(linewidth = 1) +
-  labs(
-    x = "Year",
-    y = "Overdose Deaths",
-    title = "Overdose Deaths in NYC Over Time"
-  ) +
-  theme_minimal()
-```
-
-# Drug arrests and overdoses over time
+5 Results
+The initial regression results suggest a statistically significant negative relationship between drug arrests and overdose death rates across New York City. In the simpler model specifications, higher levels of drug enforcement were associated with lower overdose death rates. This relationship remained relatively consistent across the lower-bound, midpoint, and upper-bound overdose assumptions, suggesting that the overall pattern was not heavily influenced by how suppressed overdose counts were treated within the dataset. At first glance, these findings appear to support the argument that increased enforcement may reduce overdose activity.
 
 ```{r}
-city_year <- arrests_cd_overdose |>
-  group_by(arrest_year) |>
-  summarize(
-    arrests_total = sum(arrests_total, na.rm = TRUE),
-    overdose_total = sum(overdose_total, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-ggplot(city_year, aes(x = arrest_year)) +
-  geom_line(aes(y = arrests_total, color = "Arrests")) +
-  geom_line(aes(y = overdose_total, color = "Overdoses")) +
-  labs(
-    x = "Year",
-    y = "Count",
-    color = "",
-    title = "Drug Arrests and Overdose Deaths in NYC Over Time"
-  ) +
-  theme_minimal()
-```
-
-# Scatter plot
-
-```{r}
-ggplot(arrests_cd_overdose, aes(x = arrests_total, y = overdose_total)) +
-  geom_point(alpha = 0.5, size = 2) +
-  geom_smooth(method = "lm", se = FALSE, linewidth = 1) +
-  labs(
-    title = "Higher Drug Arrests Are Associated with Lower Overdose Deaths",
-    subtitle = "Community district-level relationship in NYC",
-    x = "Drug-related arrests",
-    y = "Overdose deaths"
-  ) +
-  theme_minimal()
-```
-
-# Borough comparison
-
-```{r}
-borough_2021 <- arrests_cd_overdose |>
-  filter(arrest_year == 2021) |>
-  group_by(boro_name) |>
-  summarize(
-    arrests_total = sum(arrests_total, na.rm = TRUE),
-    overdose_total = sum(overdose_total, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-borough_long <- borough_2021 |>
-  pivot_longer(
-    cols = c(arrests_total, overdose_total),
-    names_to = "type",
-    values_to = "count"
-  )
-
-ggplot(
-  borough_long,
-  aes(x = reorder(boro_name, count), y = count, fill = type)
-) +
-  geom_col(position = "dodge", width = 0.7) +
-  coord_flip() +
-  labs(
-    title = "Comparing Drug-Related Arrests and Overdose Deaths by Borough (2021)",
-    subtitle = "Borough-level comparison in NYC",
-    x = "",
-    y = "Total Count",
-    fill = ""
-  ) +
-  scale_fill_manual(
-    values = c(
-      "overdose_total" = "#F9844A",
-      "arrests_total" = "#277DA1"
-    ),
-    labels = c("Overdose Deaths", "Drug-Related Arrests")
-  ) +
-  theme_minimal()
-```
-
-# Harlem Hot spot chart
-
-```{r}
-manhattan <- drug_pop |>
-  filter(year == 2023, borough == "Manhattan") |>
-  mutate(
-    area = case_when(
-      community_district %in% c(
-        "Central Harlem",
-        "East Harlem",
-        "Manhattanville",
-        "Manhattanville / West Harlem"
-      ) ~ "Harlem",
-      TRUE ~ "Other Manhattan"
-    )
-  )
-
-ggplot(
-  manhattan,
-  aes(
-    x = reorder(community_district, crude_rate_per_100k),
-    y = crude_rate_per_100k,
-    fill = area
-  )
-) +
-  geom_col(width = 0.7) +
-  coord_flip() +
-  scale_fill_manual(
-    values = c(
-      "Harlem" = "#F94144",
-      "Other Manhattan" = "grey70"
-    )
-  ) +
-  labs(
-    title = "Harlem Stands Out as an Overdose Hotspot",
-    subtitle = "Crude overdose death rates per 100,000 residents in Manhattan (2023)",
-    x = "",
-    y = "Crude Rate per 100,000",
-    fill = ""
-  ) +
-  theme_minimal()
-
-```
-
-Overdose deaths for Manhattan Community District
-
-```{r}
-manhattan <- drug_pop |>
-  filter(year == 2023, borough == "Manhattan")
-
-ggplot(
-  manhattan,
-  aes(
-    x = reorder(community_district, crude_rate_per_100k),
-    y = crude_rate_per_100k,
-    fill = community_district
-  )
-) +
-  geom_col(width = 0.7) +
-  coord_flip() +
-  labs(
-    title = "Overdose Rates by Manhattan Community District (2023)",
-    subtitle = "Crude overdose death rates per 100,000 residents",
-    x = "",
-    y = "Crude Rate per 100,000",
-    fill = "Community District"
-  ) +
-  theme_minimal() +
-  theme(legend.position = "none")  # removes messy legend
-
-```
-
-All NON-Manhattan boroughs our outside of Manhattan
-
-```{r}
-not_manhattan <- drug_pop |>
-  filter(year == 2023, borough != "Manhattan")
-
-ggplot(
-  not_manhattan,
-  aes(
-    x = reorder(community_district, crude_rate_per_100k),
-    y = crude_rate_per_100k,
-    fill = borough
-  )
-) +
-  geom_col(width = 0.7) +
-  coord_flip() +
-  labs(
-    title = "Overdose Rates Outside Manhattan (2023)",
-    subtitle = "Crude overdose death rates per 100,000 residents",
-    x = "",
-    y = "Crude Rate per 100,000",
-    fill = "Borough"
-  ) +
-  theme_minimal()
-
-```
-
-All boroughs and neighborhoods
-
-```{r}
-all_nyc <- drug_pop |>
-  filter(year == 2023)
-
-ggplot(
-  all_nyc,
-  aes(
-    x = reorder(community_district, crude_rate_per_100k),
-    y = crude_rate_per_100k,
-    fill = borough
-  )
-) +
-  geom_col(width = 0.7) +
-  coord_flip() +
-  labs(
-    title = "Overdose Rates by NYC Community District (2023)",
-    subtitle = "Crude overdose death rates per 100,000 residents",
-    x = "",
-    y = "Crude Rate per 100,000",
-    fill = "Borough"
-  ) +
-  theme_minimal()
-
-```
-
-# Overdose map
-
-```{r}
-ggplot(cd_map_2021) +
-  geom_sf(aes(fill = overdose_total), color = "white", size = 0.2) +
-  scale_fill_viridis_c(
-    option = "plasma",
-    name = "Overdose deaths"
-  ) +
-  labs(
-    title = "Overdose Deaths by Community District (NYC, 2021)",
-    caption = "Source: NYC DOHMH & NYPD data"
-  ) +
-  theme_minimal()
-
-# Arrest map
-ggplot(cd_map_2021) +
-  geom_sf(aes(fill = arrests_total), color = "white", size = 0.2) +
-  scale_fill_viridis_c(
-    trans = "log",
-    option = "viridis",
-    name = "Drug arrests (log scale)"
-  ) +
-  labs(
-    title = "Drug Arrests by Community District (NYC, 2021)",
-    caption = "Source: NYPD Arrest Data"
-  ) +
-  theme_minimal()
-```
-
-# 13. LAG MODELS 
-
-```{r}
-analysis_lag <- arrests_cd_overdose |>
-  arrange(boro_cd, arrest_year) |>
-  group_by(boro_cd) |>
-  mutate(
-    arrests_lag1 = lag(arrests_total, 1),
-    arrests_lag2 = lag(arrests_total, 2),
-    arrests_lag3 = lag(arrests_total, 3)
-  ) |>
-  ungroup() |>
-  mutate(
-    log_overdose = log1p(overdose_total),
-    log_arrests_lag1 = log1p(arrests_lag1),
-    log_arrests_lag3 = log1p(arrests_lag3)
-  )
-
-model_lag1 <- lm(overdose_total ~ arrests_lag1, data = analysis_lag)
-summary(model_lag1)
-
-model_lag3 <- lm(overdose_total ~ arrests_lag3, data = analysis_lag)
-summary(model_lag3)
-
-model_log_lag1 <- lm(log_overdose ~ log_arrests_lag1, data = analysis_lag)
-summary(model_log_lag1)
-
-model_log_lag3 <- lm(log_overdose ~ log_arrests_lag3, data = analysis_lag)
-summary(model_log_lag3)
-
-model_control <- lm(
-  log_overdose ~ log_arrests_lag1 + arrests_total,
-  data = analysis_lag
+model_lower <- lm(
+  log1p_overdose_deaths_lower_per_100k ~ 
+    log1p_arrests_total_per_100k_lag1 +
+    median_hhinc_10k + poverty_rate + unemp_rate +
+    pct_black + pct_hispanic + pct_foreign_born +
+    factor(boro_cd) + factor(year),
+  data = model_data
 )
 
-summary(model_control)
+model_upper <- lm(
+  log1p_overdose_deaths_upper_per_100k ~ 
+    log1p_arrests_total_per_100k_lag1 +
+    median_hhinc_10k + poverty_rate + unemp_rate +
+    pct_black + pct_hispanic + pct_foreign_born +
+    factor(boro_cd) + factor(year),
+  data = model_data
+)
 
-ggplot(analysis_lag, aes(x = arrests_lag1, y = overdose_total)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", se = FALSE) +
-  labs(
-    title = "Past Drug Arrests Are Associated with Lower Future Overdose Deaths",
-    subtitle = "1-year lag relationship",
-    x = "Drug arrests (previous year)",
-    y = "Overdose deaths"
-  ) +
-  theme_minimal()
+modelsummary(
+  list(
+    "Lower Bound" = model_lower,
+    "Midpoint" = model_midpoint,
+    "Upper Bound" = model_upper
+  ),
+  coef_omit = "factor\\(",
+  stars = TRUE,
+  vcov = ~ boro_cd,
+  gof_omit = "IC|Log|RMSE|F|Adj"
+)
 ```
+
+However, the relationship changes once neighborhood and year fixed effects are incorporated into the regression models. After controlling for persistent neighborhood characteristics and broader citywide trends, the arrest coefficient becomes small and statistically insignificant across the primary model specifications. This suggests that the significant relationships observed in the earlier models were likely influenced by differences across neighborhoods and years rather than a clear direct effect of drug arrests on overdose deaths. Overall, the results indicate that overdose patterns across New York City are shaped by a combination of social, economic, and geographic conditions and not just policing levels alone.
+
+Diagnostic tests were also conducted to evaluate the reliability of the regression models. Variance inflation factor (VIF) tests did not indicate severe multicollinearity among the primary explanatory variables. In addition, clustered standard errors were used throughout the analysis to help account for heteroskedasticity and repeated observations within neighborhoods over time. The consistency of the results across the lower-bound, midpoint, and upper-bound overdose specifications also supports the overall robustness of the findings.
+
+The regression results suggested that broader neighborhood and time related factors played a larger role in explaining overdose patterns across New York City. As a result, the analysis next shifted toward geographic and neighborhood level trends throughout the city. Rather than being evenly distributed, overdose deaths appeared heavily concentrated within specific neighborhoods and hotspot areas.
+
+
+
+```{r}
+#| echo: false
+#| fig-cap: "Overdose death hotspots across NYC community districts."
+
+knitr::include_graphics("OverdoseRatesNYCCommunityDistrict.png")
+```
+```
+The neighborhood level overdose data further highlights the uneven distribution of overdose risk across New York City. Rather than being spread evenly throughout the city, overdose deaths are heavily concentrated within a relatively small number of communities. Seven of the eight neighborhoods with the highest overdose death rates are located within the Bronx and Northern Manhattan, while many other neighborhoods throughout the city report substantially lower overdose rates. This large variation across neighborhoods suggests that citywide averages hide important local differences in overdose risk.
+
+
+```
+
+```{r}
+#| echo: false
+#| fig-cap: "Overdose rates across Bronx community districts."
+
+knitr::include_graphics("RatesOfOverdoseBronx.png")
+```
+
+
+
+The geographic hotspot patterns make this concentration even more visible. Rather than appearing as isolated high-risk neighborhoods, many of the areas with the highest overdose death rates form a connected cluster surrounding the Harlem River between the Bronx and Northern Manhattan. Department of Health data from 2024 shows that all five neighborhoods with the highest overdose death rates were located within this broader hotspot region. This pattern suggests that overdose risk extends across neighborhood and borough boundaries within a concentrated corridor of elevated overdose activity.
+
+While several neighborhoods continued to experience persistently high overdose death rates, other parts of New York City showed improvement over time. Staten Island stood out in particular due to the magnitude of its decline in overdose deaths between 2023 and 2024. Unlike the Harlem River hotspot, the significance of Staten Island was not driven by exceptionally high overdose rates, but rather by the unusually large reduction in overdose deaths observed over a relatively short period of time. This sharp decline prompted further examination into the local intervention strategies and public health responses implemented within the borough.
+
+```{r}
+#| echo: false
+#| fig-cap: "Staten Island overdose hotspot analysis."
+
+knitr::include_graphics("StatenIslandHotspot.png")
+```
+
+Further examination identified the Staten Island Hotspotting Program as one of the borough’s primary prevention based intervention strategies. The Hotspotting Program launched in January 2022 and was designed to identify and assist individuals at high risk of overdose before a crisis occurred. Rather than focusing on enforcement, the program used predictive analytics and coordinated outreach to connect participants with treatment services, recovery support, and additional healthcare resources. The program also emphasized continued follow up and care coordination, allowing intervention efforts to extend beyond a single encounter or referral. This approach reflects a shift toward prevention focused public health strategies aimed at reducing overdose risk through targeted intervention.
+
+Taken together, the spatial and neighborhood level findings reinforce the limitations of interpreting overdose trends through enforcement patterns alone. While the regression models initially suggested a strong relationship between drug arrests and overdose deaths, the neighborhood analysis revealed that overdose risk remains highly concentrated within specific communities and hotspot regions across New York City. At the same time, Staten Island’s rapid improvement highlights how localized intervention strategies may influence overdose outcomes more effectively than broader enforcement efforts alone. These findings help show that overdose risk is shaped by a combination of geographic, social, and public health conditions that vary across neighborhoods throughout the city.
+
+
+6 Conclusion
+This study examined the relationship between drug arrests and overdose death rates across New York City using fixed effects regression models, neighborhood-level overdose data, and geographic hotspot analysis. Initial regression models suggested a significant negative relationship between drug arrests and overdose deaths. However, after incorporating neighborhood and year fixed effects, the relationship weakened substantially and became statistically insignificant across the primary model specifications. These findings indicate that broader neighborhood and time-related factors play a larger role in shaping overdose patterns than enforcement levels alone.
+
+Overall, the findings show that overdose risk across New York City is highly concentrated rather than randomly distributed throughout the city. Although early regression models appeared to show a strong relationship between drug arrests and overdose deaths, the fixed effects models and neighborhood-level analysis indicate that enforcement often follows existing overdose activity rather than independently reducing it. The concentration of overdose deaths surrounding the Harlem River corridor further illustrates how persistent social and economic conditions shape localized overdose hotspots. At the same time, Staten Island’s rapid decline in overdose deaths demonstrates the potential effectiveness of targeted prevention-based intervention strategies. Together, these findings reinforce the idea that reducing overdose deaths requires more than increased enforcement alone. Public health resources, prevention efforts, and targeted intervention strategies are likely to have the greatest impact when focused within the communities facing the highest levels of overdose risk.
+
+
+7 References
+Estrada, Yarelix, et al. “The Prevalence of Fentanyl in New York City’s Unregulated Drug Supply as Measured through Drug Checking Offered at Syringe Service Programs.” Drug and Alcohol Dependence, vol. 268, 2025, p. 112578. https://www.sciencedirect.com/science/article/pii/S0376871625000316.
+
+“Unintentional Drug Poisoning (Overdose) Deaths in New York City, 2025.” New York City Department of Health and Mental Hygiene, 2025, https://www.nyc.gov/assets/doh/downloads/pdf/epi/databrief150-unintentional-drug-death-2025.pdf
+
+“Collaborative Care.” Staten Island Performing Provider System, Staten Island PPS Collaborative Care Program, https://statenislandpps.org/behavioral-health-programs/collaborative-care/
+
+Unintentional Drug Poisoning (Overdose) Deaths.” NYC Open Data, New York City Department of Health and Mental Hygiene, NYC Open Data Overdose Dataset.
+
+“NYPD Arrest Data (Year to Date).” NYC Open Data, New York City Police Department, NYC Open Data Arrest Dataset.
+
+“American Community Survey (ACS).” United States Census Bureau, U.S. Department of Commerce, U.S. Census Bureau ACS
+
+
+8 Appendix
+```{r}
+modelsummary(
+  list(
+    "Lower Bound" = model_lower,
+    "Midpoint" = model_midpoint,
+    "Upper Bound" = model_upper
+  ),
+  
+  coef_omit = "factor\\(",
+  
+  coef_map = c(
+    "log1p_arrests_total_per_100k_lag1" = "Lagged drug arrests per 100k (log)",
+    "median_hhinc_10k" = "Median household income ($10k)",
+    "poverty_rate" = "Poverty rate",
+    "unemp_rate" = "Unemployment rate",
+    "pct_black" = "% Black",
+    "pct_hispanic" = "% Hispanic",
+    "pct_foreign_born" = "% Foreign born"
+  ),
+  
+  stars = TRUE,
+  vcov = ~ boro_cd,
+  
+  gof_omit = "IC|Adj|Log|F|RMSE",
+  
+  add_rows = tibble::tribble(
+    ~term, ~`Lower Bound`, ~Midpoint, ~`Upper Bound`,
+    "Community District FE", "Yes", "Yes", "Yes",
+    "Year FE", "Yes", "Yes", "Yes"
+  ),
+  
+  notes = "Standard errors clustered by community district."
+)
+```
+
+```{r}
+#| echo: false
+#| fig-cap: "Comparison of drug arrests and overdose deaths across NYC neighborhoods."
+
+knitr::include_graphics("ComparingDrugandOverdose.png")
+```
+```{r}
+#| echo: false
+#| fig-cap: "Drug arrest patterns by community district."
+
+knitr::include_graphics("DrugArrestByCommunityDistrict.png")
+```
+
+```{r}
+#| echo: false
+#| fig-cap: "Harlem overdose hotspot analysis."
+
+knitr::include_graphics("HarlemOverdoseHotspot.png")
+```
+
+```{r}
+#| echo: false
+#| fig-cap: "Overdose deaths by NYC community district."
+
+knitr::include_graphics("OverdoseDeathsCommunityDistrict.png")
+```
+
+
